@@ -1,0 +1,34 @@
+{
+  "run_id": "20260514_gatv2_5x5_tuned_seed3_parallel",
+  "description": "Tuned hyperparams + ALL 4 joblib Parallel paths enabled (HEFT val, update-0 val, training rollouts, periodic val). Expected ~3-5x speedup. Goal: beat author 5x5 baseline 410.89 (NOT strict reproduction).",
+  "architecture": "GATv2",
+  "step1_actor": "validation_data/step1/actors/a_5_5_0.0015.pth",
+  "command": "python -u step2.py --vm_types 5 --each_vm_type_num 5 --arr_rate 5.4 --lr_a 0.0001 --lr_c 0.001 --warmup_critic 500 --grad_control 0 --algo_seed 3 --entloss_coef 0.01",
+  "non_default_flags": {
+    "vm_types": 5,
+    "each_vm_type_num": 5,
+    "arr_rate": 5.4,
+    "lr_a": 0.0001,
+    "lr_c": 0.001,
+    "warmup_critic": 500,
+    "grad_control": 0,
+    "algo_seed": 3,
+    "entloss_coef": 0.01
+  },
+  "code_changes": {
+    "actor3.py": "GATConv -> GATv2Conv (local mod, see actor3.py.gat_backup)",
+    "step2.py": "Activated joblib Parallel at lines 160, 186, 206 (rollout, n_jobs=num_envs), 228 (see step2.py.bak_serial)"
+  },
+  "env_seed": 0,
+  "algo_seed": 3,
+  "started_at": "PENDING",
+  "status": "crashed_sigsegv_at_validation",
+  "crashed_at_update": 440,
+  "best_validation": {
+    "update": 260,
+    "mean_flowtime": 415.424082,
+    "improvement_over_step1": "1.33%"
+  },
+  "checkpoint_saved": "checkpoints/best_actor_415.42.pth (+ critic)",
+  "crash_cause": "joblib worker SIGSEGV during parallel validation at update-440. PyTorch+joblib actor serialization issue."
+}

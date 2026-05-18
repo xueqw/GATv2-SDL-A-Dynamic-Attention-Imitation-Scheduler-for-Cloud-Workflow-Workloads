@@ -408,6 +408,32 @@ class SelfAttention(nn.Module):
         return output
     
 
+class PointerHead(nn.Module):
+    """Pointer-attention scoring head (Vinyals 2015 / Kool 2019 style).
+
+    Given a query (e.g., global context) and N candidate embeddings,
+    produces N scores via Q.K^T scaled dot-product + tanh scaling.
+
+    Unlike MLP, all candidates' scores depend on a shared query;
+    unlike SelfAttention, candidates do NOT mix with each other.
+    """
+    def __init__(self, hidden_dim, tanh_scaling=10.0):
+        super().__init__()
+        self.W_q = nn.Linear(hidden_dim, hidden_dim, bias=False)
+        self.W_k = nn.Linear(hidden_dim, hidden_dim, bias=False)
+        self.scale = hidden_dim ** 0.5
+        self.tanh_scaling = tanh_scaling
+
+    def forward(self, query, keys):
+        # query: (B, hidden_dim)         - shared context
+        # keys:  (B, N, hidden_dim)      - candidate embeddings
+        Q = self.W_q(query)
+        K = self.W_k(keys)
+        scores = torch.bmm(Q.unsqueeze(1), K.transpose(1, 2)).squeeze(1) / self.scale
+        scores = self.tanh_scaling * torch.tanh(scores)
+        return scores  # (B, N)
+
+
 class Critic(nn.Module):
     def __init__(self,
                  input_dim_wf,
@@ -507,6 +533,7 @@ class Actor(nn.Module):
                  dropout=0.0,
                  activate_fn = 'relu',
                  embedding_type = 'gat',
+                 atten_layers = 0,
                  ):
         super().__init__()
         self.gnn_layers = gnn_layers
@@ -526,7 +553,23 @@ class Actor(nn.Module):
             in_dim = hidden_dim*2 
         else:
             in_dim = hidden_dim
-        self.actor = MLP(in_dim, hidden_dim, 1, mlp_layers) 
+        self.actor = MLP(in_dim, hidden_dim, 1, mlp_layers)
+
+        # NEW: Pointer attention scoring head (Vinyals 2015 / Kool 2019)
+        self.use_pointer = (configs.actor_pointer == 1)
+        if self.use_pointer:
+            self.pointer_head = PointerHead(hidden_dim, tanh_scaling=10.0)
+
+        # NEW: optional self-attention over candidates (symmetric with critic)
+        self.atten_layers = atten_layers
+        if atten_layers > 0:
+            self.candidate_attention = SelfAttention(
+                embed_dim=hidden_dim,
+                ff_dim=hidden_dim*4,
+                dropout=dropout,
+                layers_attn=atten_layers,
+                heads=heads,
+            )
 
     def norm_init(self, std=1.0):
         for param in self.parameters():
@@ -573,14 +616,17 @@ class Actor(nn.Module):
         candidate_tasks = candidate_tasks.reshape(-1, self.vmNum, hidden_dim)
 
         graph_embed = candidate_tasks
-        # if configs.require_mean == 1:
-        #     average_vm_embed = global_mean_pool(wf_task_embed[mask_wf], batch_vm[mask_wf]).reshape(-1, self.vmNum, hidden_dim)  # (1, 18, 32)
-        #     graph_embed = torch.cat((candidate_tasks, average_vm_embed), dim=-1)    # (1, 18, 64)
-        # else:
-        #     graph_embed = candidate_tasks # (1, 18, 32)
+        # Apply candidate self-attention if enabled
+        if self.atten_layers > 0:
+            graph_embed = self.candidate_attention(graph_embed)
 
-        # Calculate prob
-        candidate_scores = self.actor(graph_embed)
+        # Calculate prob - use Pointer head if enabled, else MLP
+        if self.use_pointer:
+            context = graph_embed.mean(dim=1)              # (B, d)
+            candidate_scores = self.pointer_head(context, graph_embed)  # (B, N)
+            candidate_scores = candidate_scores.unsqueeze(-1)           # (B, N, 1)
+        else:
+            candidate_scores = self.actor(graph_embed)
 
         pi = F.softmax(candidate_scores, dim=1)     # (batch_Size, 18 ,1)
         dist = Categorical(probs=pi.squeeze())
@@ -609,6 +655,7 @@ class Actor(nn.Module):
                 batch_vm,
                 candidate_task_index,  ## (batch_size, n_j)       
                 actions,      
+                return_pi=False,
                 ):
         
         edge_index_wf = torch.cat((edge_index_wf, edge_index_wf.flip(0)), dim=-1)
@@ -619,15 +666,25 @@ class Actor(nn.Module):
         candidate_tasks = candidate_tasks.reshape(-1, self.vmNum, hidden_dim)
 
         graph_embed = candidate_tasks 
+        # NEW: candidate self-attention (in eval_actions)
+        if self.atten_layers > 0:
+            graph_embed = self.candidate_attention(graph_embed)
 
-        # Calculate prob
-        candidate_scores = self.actor(graph_embed)
+        # NEW: Pointer head OR MLP
+        if self.use_pointer:
+            context = graph_embed.mean(dim=1)
+            candidate_scores = self.pointer_head(context, graph_embed)
+            candidate_scores = candidate_scores.unsqueeze(-1)
+        else:
+            candidate_scores = self.actor(graph_embed)
 
-        pi = F.softmax(candidate_scores, dim=1) 
+        pi = F.softmax(candidate_scores, dim=1)
         dist = Categorical(probs=pi.squeeze())
         log_prob = dist.log_prob(actions.clone().detach())
         entropy = dist.entropy().mean()
 
+        if return_pi:
+            return log_prob, entropy, pi.squeeze()
         return log_prob, entropy
 
     def eval_dists(self,
@@ -650,7 +707,14 @@ class Actor(nn.Module):
         candidate_tasks = candidate_tasks.reshape(-1, self.vmNum, hidden_dim)
 
         graph_embed = candidate_tasks
-        candidate_scores = self.actor(graph_embed)
+        if self.atten_layers > 0:
+            graph_embed = self.candidate_attention(graph_embed)
+        if self.use_pointer:
+            context = graph_embed.mean(dim=1)
+            candidate_scores = self.pointer_head(context, graph_embed)
+            candidate_scores = candidate_scores.unsqueeze(-1)
+        else:
+            candidate_scores = self.actor(graph_embed)
 
         pi = F.softmax(candidate_scores, dim=1) 
         dist = Categorical(probs=pi.squeeze())
@@ -678,6 +742,7 @@ class REINFORCE:
                             heads,
                             dropout,     
                             activate_fn,   
+                            atten_layers=configs.actor_atten_layers,
                             ).to(device)     
 
         self.optimizer_actor = torch.optim.Adam(self.actor.parameters(), lr=configs.lr_a)
@@ -797,6 +862,7 @@ class PPO:
                             heads,
                             dropout,     
                             activate_fn,   
+                            atten_layers=configs.actor_atten_layers,
                             ).to(device)
         
         self.critic = Critic(input_dim_wf,
@@ -811,6 +877,27 @@ class PPO:
 
         self.optimizer_actor = torch.optim.Adam(self.actor.parameters(), lr=configs.lr_a)
         self.optimizer_critic = torch.optim.Adam(self.critic.parameters(), lr=configs.lr_c)
+        # NEW: ensure accumulators initialized (referenced in train() / train_actor())
+        self.entropy_count = 0
+        self.grad_count = 0
+        self.pre_grad_max = 0
+        # NEW: KL anchor reference actor (set externally by step2.py if --beta_kl > 0)
+        self.ref_actor = None
+
+    def _actor_loss_coefficients(self):
+        if self.update_idx <= configs.warmup_critic:
+            p_coef = 0.0
+            kl_coef = configs.beta_kl
+        else:
+            if configs.ppo_ramp_updates > 0:
+                ramp_step = min(self.update_idx - configs.warmup_critic, configs.ppo_ramp_updates)
+                progress = ramp_step / configs.ppo_ramp_updates
+                p_coef = configs.ppo_start_coef + (configs.ppo_max_coef - configs.ppo_start_coef) * progress
+            else:
+                p_coef = configs.ppo_max_coef
+            kl_after = configs.beta_kl_after if configs.beta_kl_after >= 0 else configs.beta_kl
+            kl_coef = kl_after
+        return p_coef, kl_coef
 
     def train_HEFT(self, bufferdata):
         # state_mb, action_mb, reward_mb
@@ -1001,17 +1088,33 @@ class PPO:
             pg_loss, entropy_loss, va_loss, rate_loss = [], [], [], []  
             for rollout_data in actor_samples.get(configs.batch_size):      
 
-                batch_states = BatchGraph(configs.normalize).batch_process(rollout_data.states) 
-                logprobs, ent_loss = self.actor.eval_actions(state_wf = batch_states.wf_features,    
-                                state_vm = batch_states.vm_features,                 
-                                edge_index_wf = batch_states.wf_edges,    
-                                edge_index_vm = batch_states.vm_edges,   
-                                mask_wf = batch_states.wf_masks,
-                                mask_vm = batch_states.vm_masks,
-                                batch_wf = batch_states.wf_batchs,
-                                batch_vm = batch_states.vm_batchs,
-                                candidate_task_index = batch_states.candidate_taskID,
-                                actions = rollout_data.actions) 
+                actor_states = BatchGraph(configs.normalize).batch_process(rollout_data.states)
+                p_coef, kl_coef = self._actor_loss_coefficients()
+                _need_pi = (self.ref_actor is not None) and (kl_coef > 0)
+                if _need_pi:
+                    logprobs, ent_loss, pi_cur = self.actor.eval_actions(state_wf = actor_states.wf_features,
+                                    state_vm = actor_states.vm_features,
+                                    edge_index_wf = actor_states.wf_edges,
+                                    edge_index_vm = actor_states.vm_edges,
+                                    mask_wf = actor_states.wf_masks,
+                                    mask_vm = actor_states.vm_masks,
+                                    batch_wf = actor_states.wf_batchs,
+                                    batch_vm = actor_states.vm_batchs,
+                                    candidate_task_index = actor_states.candidate_taskID,
+                                    actions = rollout_data.actions,
+                                    return_pi = True)
+                else:
+                    logprobs, ent_loss = self.actor.eval_actions(state_wf = actor_states.wf_features,
+                                    state_vm = actor_states.vm_features,
+                                    edge_index_wf = actor_states.wf_edges,
+                                    edge_index_vm = actor_states.vm_edges,
+                                    mask_wf = actor_states.wf_masks,
+                                    mask_vm = actor_states.vm_masks,
+                                    batch_wf = actor_states.wf_batchs,
+                                    batch_vm = actor_states.vm_batchs,
+                                    candidate_task_index = actor_states.candidate_taskID,
+                                    actions = rollout_data.actions)
+                    pi_cur = None
 
                 if configs.normalize_advantage:
                     advantages = (rollout_data.advantages - rollout_data.advantages.mean()) / (rollout_data.advantages.std() + 1e-8)   
@@ -1049,12 +1152,27 @@ class PPO:
                 else:
                     e_coef = 0
 
-                if self.update_idx > configs.warmup_critic:
-                    p_coef = 1
-                else:
-                    p_coef = 0
+                # NEW: KL anchor to the frozen step1 policy. It can be active during
+                # critic warmup to preserve the imitation prior while PPO loss is off.
+                kl_anchor = 0.0
+                if pi_cur is not None and self.ref_actor is not None and kl_coef > 0:
+                    with torch.no_grad():
+                        pi_ref, _ = self.ref_actor.eval_dists(state_wf = actor_states.wf_features,
+                                        state_vm = actor_states.vm_features,
+                                        edge_index_wf = actor_states.wf_edges,
+                                        edge_index_vm = actor_states.vm_edges,
+                                        mask_wf = actor_states.wf_masks,
+                                        mask_vm = actor_states.vm_masks,
+                                        batch_wf = actor_states.wf_batchs,
+                                        batch_vm = actor_states.vm_batchs,
+                                        candidate_task_index = actor_states.candidate_taskID)
+                    _eps = 1e-10
+                    _log_pi_cur = torch.log(pi_cur + _eps)
+                    _log_pi_ref = torch.log(pi_ref + _eps)
+                    # Forward KL: KL(pi_cur || pi_ref) — penalizes mass where pi_ref is small
+                    kl_anchor = (pi_cur * (_log_pi_cur - _log_pi_ref)).sum(dim=-1).mean()
 
-                loss = -p_coef*p_loss + configs.vloss_coef * v_loss -  e_coef* ent_loss
+                loss = -p_coef*p_loss + configs.vloss_coef * v_loss - e_coef*ent_loss + kl_coef*kl_anchor
 
                 all_loss.append(loss.item())
                 self.optimizer.zero_grad()
@@ -1096,4 +1214,3 @@ class PPO:
             self.pre_grad_max = np.mean(grad_changes)+ np.std(grad_changes)
 
         return (all_loss, pg_losses, entropy_losses), (va_losses, mre_losses, grad_changes)
-

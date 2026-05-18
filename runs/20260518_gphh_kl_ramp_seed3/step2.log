@@ -1,0 +1,21 @@
+==================================================
+Watchdog start: Mon May 18 07:15:35 PM CST 2026
+Run dir: runs/20260518_gphh_kl_ramp_seed3
+Args: --vm_types 5 --each_vm_type_num 5 --arr_rate 5.4 --lr_a 0.0001 --lr_c 0.001 --warmup_critic 120 --max_updates 1000 --grad_control 0 --algo_seed 3 --entloss_coef 0.01 --entropy_control 1 --entropy_min 0.3 --entropy_max 0.6 --beta_kl 0.05 --beta_kl_after 0.02 --ppo_start_coef 0.05 --ppo_max_coef 0.3 --ppo_ramp_updates 200 --teacher gphh --actor_pointer 0 --actor_atten_layers 0 --checkpoint_interval 20
+==================================================
+[Mon May 18 07:15:35 PM CST 2026] === Attempt 1: starting fresh ===
+Vlidation at HEFT: mean_flowtime_deterministic: 521.875939+/-75.079270	 time_elapsed: 0.006803
+[kl-anchor] ref_actor created, beta_kl=0.05
+Vlidation at update-0: mean_flowtime_deterministic: 412.564302+/-68.874040	 mean_Entropy: 0.508033+/-0.074831	 record: 412.564302	 time_elapsed: 0.015706
+Episode-1: ep_meanFlowTime: 505.187363	 all_loss: 0.253544	 p_loss: -1.647639	 e_loss: 0.507121	 v_loss: 0.501610	 v_mre: 38.806539	 grad_changes: 0.048590	 time_elapsed: 0.0265
+Episode-2: ep_meanFlowTime: 359.704717	 all_loss: 0.078213	 p_loss: 0.197160	 e_loss: 0.523110	 v_loss: 0.152665	 v_mre: 34.689273	 grad_changes: 0.013603	 time_elapsed: 0.0359
+Episode-3: ep_meanFlowTime: 376.428819	 all_loss: 0.082371	 p_loss: 0.009370	 e_loss: 0.599465	 v_loss: 0.153826	 v_mre: 91.130333	 grad_changes: 0.029594	 time_elapsed: 0.0448
+Episode-4: ep_meanFlowTime: 438.904087	 all_loss: 0.123657	 p_loss: -0.173716	 e_loss: 0.505230	 v_loss: 0.178192	 v_mre: 30.250031	 grad_changes: 0.196554	 time_elapsed: 0.0685
+Episode-5: ep_meanFlowTime: 398.713625	 all_loss: 0.149220	 p_loss: 0.187967	 e_loss: 0.494952	 v_loss: 0.241035	 v_mre: 37.014823	 grad_changes: 0.081806	 time_elapsed: 0.1897
+Episode-6: ep_meanFlowTime: 422.407600	 all_loss: 0.154718	 p_loss: -0.236882	 e_loss: 0.614267	 v_loss: 0.262051	 v_mre: 85.187829	 grad_changes: 0.105465	 time_elapsed: 0.3387
+Episode-7: ep_meanFlowTime: 221.990503	 all_loss: 0.065859	 p_loss: 0.569653	 e_loss: 0.489865	 v_loss: 0.089784	 v_mre: 39.750687	 grad_changes: 0.174564	 time_elapsed: 0.4681
+Episode-8: ep_meanFlowTime: 458.118208	 all_loss: 0.188397	 p_loss: -0.676350	 e_loss: 0.558328	 v_loss: 0.254249	 v_mre: 32.888855	 grad_changes: 0.204613	 time_elapsed: 0.4767
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 10 leaked semlock objects to clean up at shutdown
+  warnings.warn(
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 11 leaked folder objects to clean up at shutdown
+  warnings.warn(

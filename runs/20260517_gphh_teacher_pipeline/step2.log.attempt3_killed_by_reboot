@@ -1,0 +1,28 @@
+==================================================
+Watchdog start: Mon May 18 01:22:45 PM CST 2026
+Run dir: runs/20260517_gphh_teacher_pipeline
+Args: --vm_types 5 --each_vm_type_num 5 --arr_rate 5.4 --lr_a 0.0001 --lr_c 0.001 --warmup_critic 500 --max_updates 1000 --grad_control 0 --algo_seed 3 --entloss_coef 0.01 --entropy_control 1 --entropy_min 0.3 --entropy_max 0.6 --teacher gphh --actor_pointer 0 --actor_atten_layers 0 --checkpoint_interval 20
+==================================================
+[Mon May 18 01:22:45 PM CST 2026] === Attempt 1: starting fresh ===
+Vlidation at HEFT: mean_flowtime_deterministic: 521.875939+/-75.079270	 time_elapsed: 0.006637
+Vlidation at update-0: mean_flowtime_deterministic: 412.564302+/-68.874040	 mean_Entropy: 0.507898+/-0.074770	 record: 412.564302	 time_elapsed: 0.015861
+Episode-1: ep_meanFlowTime: 516.588508	 all_loss: 0.419692	 p_loss: -1.748538	 e_loss: 0.422350	 v_loss: 0.839365	 v_mre: 46.517588	 grad_changes: 0.000513	 time_elapsed: 0.0257
+Episode-2: ep_meanFlowTime: 369.246362	 all_loss: 0.103473	 p_loss: 0.518246	 e_loss: 0.459604	 v_loss: 0.206720	 v_mre: 41.715605	 grad_changes: 0.000091	 time_elapsed: 0.0344
+Episode-3: ep_meanFlowTime: 378.778431	 all_loss: 0.117779	 p_loss: -0.082887	 e_loss: 0.429155	 v_loss: 0.235669	 v_mre: 118.007926	 grad_changes: 0.000079	 time_elapsed: 0.0429
+Episode-4: ep_meanFlowTime: 433.477195	 all_loss: 0.114126	 p_loss: -0.428199	 e_loss: 0.451999	 v_loss: 0.228435	 v_mre: 32.653827	 grad_changes: 0.000376	 time_elapsed: 0.0505
+Episode-5: ep_meanFlowTime: 413.915612	 all_loss: 0.066517	 p_loss: -0.171164	 e_loss: 0.435236	 v_loss: 0.132964	 v_mre: 21.413691	 grad_changes: 0.002113	 time_elapsed: 0.0580
+Episode-6: ep_meanFlowTime: 410.294820	 all_loss: 0.104405	 p_loss: 0.190341	 e_loss: 0.458311	 v_loss: 0.208441	 v_mre: 70.869104	 grad_changes: 0.000435	 time_elapsed: 0.0660
+Episode-7: ep_meanFlowTime: 222.555315	 all_loss: 0.036301	 p_loss: 0.190668	 e_loss: 0.486500	 v_loss: 0.072228	 v_mre: 34.748635	 grad_changes: 0.000317	 time_elapsed: 0.0730
+Episode-8: ep_meanFlowTime: 465.122343	 all_loss: 0.141630	 p_loss: -0.619818	 e_loss: 0.427890	 v_loss: 0.283464	 v_mre: 211.106621	 grad_changes: 0.000253	 time_elapsed: 0.0818
+Episode-9: ep_meanFlowTime: 235.072681	 all_loss: 0.045017	 p_loss: 0.423832	 e_loss: 0.415788	 v_loss: 0.089181	 v_mre: 41.347784	 grad_changes: 0.001785	 time_elapsed: 0.0894
+Episode-10: ep_meanFlowTime: 359.829065	 all_loss: 0.113773	 p_loss: -0.438982	 e_loss: 0.286499	 v_loss: 0.229638	 v_mre: 50.197248	 grad_changes: 0.006170	 time_elapsed: 0.0986
+Episode-11: ep_meanFlowTime: 624.358306	 all_loss: 0.125214	 p_loss: -0.553452	 e_loss: 0.424812	 v_loss: 0.250303	 v_mre: 20.869458	 grad_changes: 0.000162	 time_elapsed: 0.1088
+Episode-12: ep_meanFlowTime: 364.628865	 all_loss: 0.079702	 p_loss: 0.472434	 e_loss: 0.483709	 v_loss: 0.158662	 v_mre: 33.869191	 grad_changes: 0.000402	 time_elapsed: 0.1172
+Episode-13: ep_meanFlowTime: 449.408613	 all_loss: 0.124913	 p_loss: -0.071054	 e_loss: 0.400333	 v_loss: 0.250314	 v_mre: 44.512549	 grad_changes: 0.000487	 time_elapsed: 0.1259
+Episode-14: ep_meanFlowTime: 389.797171	 all_loss: 0.072363	 p_loss: 0.302012	 e_loss: 0.451434	 v_loss: 0.144459	 v_mre: 28.564914	 grad_changes: 0.000661	 time_elapsed: 0.1339
+Episode-15: ep_meanFlowTime: 443.340592	 all_loss: 0.075161	 p_loss: -0.215754	 e_loss: 0.424431	 v_loss: 0.150527	 v_mre: 24.807093	 grad_changes: 0.000391	 time_elapsed: 0.1417
+Episode-16: ep_meanFlowTime: 310.266396	 all_loss: 0.047500	 p_loss: 0.153469	 e_loss: 0.503625	 v_loss: 0.093567	 v_mre: 33.103847	 grad_changes: 0.001457	 time_elapsed: 0.1496
+Episode-17: ep_meanFlowTime: 466.326503	 all_loss: 0.054921	 p_loss: -0.359377	 e_loss: 0.431079	 v_loss: 0.110141	 v_mre: 21.578943	 grad_changes: 0.001013	 time_elapsed: 0.1573
+Episode-18: ep_meanFlowTime: 528.453113	 all_loss: 0.065395	 p_loss: 0.058763	 e_loss: 0.418259	 v_loss: 0.130900	 v_mre: 14.694738	 grad_changes: 0.000207	 time_elapsed: 0.1663
+Episode-19: ep_meanFlowTime: 448.191169	 all_loss: 0.081110	 p_loss: -0.029725	 e_loss: 0.460787	 v_loss: 0.162091	 v_mre: 33.682780	 grad_changes: 0.000203	 time_elapsed: 0.1752
+Episode-20: ep_meanFlowTime: 401.423379	 all_loss: 0.106322	 p_loss: -0.261800	 e_loss: 0.469965	 v_loss: 0.212411	 v_mre: 44.679653	 grad_changes: 0.000103	 time_elapsed: 0.1833

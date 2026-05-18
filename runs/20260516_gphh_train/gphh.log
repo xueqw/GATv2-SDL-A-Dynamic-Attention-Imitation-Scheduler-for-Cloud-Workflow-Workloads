@@ -1,0 +1,37 @@
+[GPHH] using 24 workers
+Generation-0 --> avg: 14137.151	 std: 26491.670	  min: 245.323	 time_elapsed: 0.664
+Validation result ---->	 mean_flowtime: 467.132 +/- 72.887	 time_elapsed: 0.671
+Generation-1 --> avg: 6868.213	 std: 22517.810	  min: 361.121	 time_elapsed: 1.344
+Validation result ---->	 mean_flowtime: 454.649 +/- 67.092	 time_elapsed: 1.351
+Generation-2 --> avg: 5724.575	 std: 24832.870	  min: 446.404	 time_elapsed: 2.002
+Validation result ---->	 mean_flowtime: 443.676 +/- 65.351	 time_elapsed: 2.009
+Generation-3 --> avg: 10834.565	 std: 37740.866	  min: 568.649	 time_elapsed: 2.658
+Validation result ---->	 mean_flowtime: 463.144 +/- 67.085	 time_elapsed: 2.665
+Generation-4 --> avg: 4692.489	 std: 20395.631	  min: 457.410	 time_elapsed: 3.315
+Validation result ---->	 mean_flowtime: 478.566 +/- 65.053	 time_elapsed: 3.322
+Generation-5 --> avg: 3581.859	 std: 16938.442	  min: 587.892	 time_elapsed: 3.974
+Validation result ---->	 mean_flowtime: 468.186 +/- 65.410	 time_elapsed: 3.981
+Generation-6 --> avg: 3485.726	 std: 17590.785	  min: 440.679	 time_elapsed: 4.658
+Validation result ---->	 mean_flowtime: 439.261 +/- 64.824	 time_elapsed: 4.665
+Generation-7 --> avg: 3596.394	 std: 16117.064	  min: 594.206	 time_elapsed: 5.324
+Validation result ---->	 mean_flowtime: 440.404 +/- 65.630	 time_elapsed: 5.331
+Generation-8 --> avg: 2186.297	 std: 11715.367	  min: 333.595	 time_elapsed: 5.981
+Validation result ---->	 mean_flowtime: 426.693 +/- 66.718	 time_elapsed: 5.988
+Generation-9 --> avg: 3607.126	 std: 16770.232	  min: 395.088	 time_elapsed: 6.647
+Validation result ---->	 mean_flowtime: 426.693 +/- 66.718	 time_elapsed: 6.654
+Generation-10 --> avg: 3412.617	 std: 16378.779	  min: 480.262	 time_elapsed: 7.329
+Validation result ---->	 mean_flowtime: 426.412 +/- 69.116	 time_elapsed: 7.336
+Generation-11 --> avg: 1960.807	 std: 10100.921	  min: 352.046	 time_elapsed: 8.008
+Validation result ---->	 mean_flowtime: 430.674 +/- 66.119	 time_elapsed: 8.015
+Generation-12 --> avg: 4608.084	 std: 21468.728	  min: 476.655	 time_elapsed: 8.678
+Validation result ---->	 mean_flowtime: 426.645 +/- 67.950	 time_elapsed: 8.685
+Generation-13 --> avg: 3965.034	 std: 17649.240	  min: 292.815	 time_elapsed: 9.336
+Validation result ---->	 mean_flowtime: 426.756 +/- 69.099	 time_elapsed: 9.343
+Generation-14 --> avg: 6778.747	 std: 31758.788	  min: 610.354	 time_elapsed: 10.012
+Validation result ---->	 mean_flowtime: 426.336 +/- 68.583	 time_elapsed: 10.019
+Generation-15 --> avg: 5051.143	 std: 23001.211	  min: 360.928	 time_elapsed: 10.684
+Validation result ---->	 mean_flowtime: 422.676 +/- 68.009	 time_elapsed: 10.691
+Generation-16 --> avg: 9168.130	 std: 37918.187	  min: 453.543	 time_elapsed: 11.355
+Validation result ---->	 mean_flowtime: 423.264 +/- 66.903	 time_elapsed: 11.362
+Generation-17 --> avg: 9801.744	 std: 36973.776	  min: 334.848	 time_elapsed: 12.037
+Validation result ---->	 mean_flowtime: 426.693 +/- 66.718	 time_elapsed: 12.043

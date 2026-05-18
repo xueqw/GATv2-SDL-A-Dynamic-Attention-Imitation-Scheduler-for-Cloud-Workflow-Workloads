@@ -1,0 +1,9 @@
+[Sat May 16 01:28:28 PM CST 2026] === Pipeline started ===
+[Sat May 16 01:28:28 PM CST 2026] Backed up old step1 actor to /home/xue/GOODRL/validation_data/step1/actors/a_5_5_0.0015.pth.bak_pre_actor_attn
+[Sat May 16 01:28:28 PM CST 2026] === Running Step1 with --actor_atten_layers 1 ===
+[Sat May 16 01:44:25 PM CST 2026] Step1 exit code: 0
+[Sat May 16 01:44:25 PM CST 2026] Promoted step1 actor to validation_data/
+[Sat May 16 01:44:25 PM CST 2026] Step1 last validation: Vlidation at update-10: mean_flowtime_deterministic: 941.581+/-169.259	 record: 893.696	 time_elapsed: 0.265
+[Sat May 16 01:44:25 PM CST 2026] === Running Step2 with watchdog ===
+[Sat May 16 01:45:54 PM CST 2026] Step2 watchdog exit code: 2
+[Sat May 16 01:45:54 PM CST 2026] === Pipeline DONE ===

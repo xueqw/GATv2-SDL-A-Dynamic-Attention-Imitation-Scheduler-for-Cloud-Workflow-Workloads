@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Backup files
+*.bak_*
+*.gat_backup
+*.backup
+
+# Logs / npy / pkl (large binaries; keep only bestTree.pkl)
+logs/a_*.pth
+logs/c_*.pth
+logs/a-*.pth
+logs/c-*.pth
+logs/*.npy
+logs/*.pkl
+!logs/bestTree_*.pkl
+
+# Large teacher memories
+validation_data/GPHH/*.pkl
+validation_data/HEFT/*.pkl
+validation_data/HEFT/*.npy
+validation_data/ESRL/*.pth
+
+# Run artifacts (keep logs / metadata only; checkpoints are huge)
+runs/**/checkpoints/
+runs/**/checkpoints.*/
+runs/*.master.log
+runs/*.png
+
+# Misc
+backups_overnight/
+*.swp
+.DS_Store
+validation_data/step2/critics/*.pth
+runs/**/step1_actor.pth
+runs/**/state_*.pth
+runs/**/*.png

@@ -1,4 +1,5 @@
 import multiprocessing
+import os
 from config.Params import configs
 from env.workflow_scheduling_v3.simulator_wf import WFEnv
 from env.workflow_scheduling_v3.lib.poissonSampling import sample_poisson_shape
@@ -259,7 +260,9 @@ def main():
 
 if __name__ == '__main__':
     total1 = time.time()
-    pool = multiprocessing.Pool()
+    NUM_GP_WORKERS = int(os.environ.get('GP_WORKERS', '32'))
+    pool = multiprocessing.Pool(processes=NUM_GP_WORKERS)
+    print(f'[GPHH] using {NUM_GP_WORKERS} workers', flush=True)
     toolbox.register("map", pool.map)    
     main()
     pool.close()

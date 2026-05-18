@@ -1,0 +1,20 @@
+Vlidation at HEFT: mean_flowtime_deterministic: 521.876+/-75.079	 time_elapsed: 0.007
+Vlidation at update-0: mean_flowtime_deterministic: 160220.752+/-27088.516	 record: 160220.752	 time_elapsed: 0.079
+Episode-1: p_loss: 3.218	 e_loss: 3.218	 time_elapsed: 0.09
+Vlidation at update-1: mean_flowtime_deterministic: 713.648+/-154.092	 record: 713.648	 time_elapsed: 0.096
+Episode-2: p_loss: 3.200	 e_loss: 2.806	 time_elapsed: 0.10
+Vlidation at update-2: mean_flowtime_deterministic: 446.169+/-77.941	 record: 446.169	 time_elapsed: 0.113
+Episode-3: p_loss: 3.172	 e_loss: 1.746	 time_elapsed: 0.12
+Vlidation at update-3: mean_flowtime_deterministic: 464.472+/-77.760	 record: 446.169	 time_elapsed: 0.130
+Episode-4: p_loss: 3.167	 e_loss: 1.451	 time_elapsed: 0.14
+Vlidation at update-4: mean_flowtime_deterministic: 488.425+/-87.982	 record: 446.169	 time_elapsed: 0.147
+Episode-5: p_loss: 3.166	 e_loss: 1.411	 time_elapsed: 0.16
+Vlidation at update-5: mean_flowtime_deterministic: 439.045+/-76.102	 record: 439.045	 time_elapsed: 0.165
+Episode-6: p_loss: 3.165	 e_loss: 1.303	 time_elapsed: 0.17
+Vlidation at update-6: mean_flowtime_deterministic: 442.752+/-76.310	 record: 439.045	 time_elapsed: 0.182
+Episode-7: p_loss: 3.164	 e_loss: 1.232	 time_elapsed: 0.19
+Vlidation at update-7: mean_flowtime_deterministic: 447.931+/-71.790	 record: 439.045	 time_elapsed: 0.200
+Episode-8: p_loss: 3.164	 e_loss: 1.183	 time_elapsed: 0.21
+Vlidation at update-8: mean_flowtime_deterministic: 480.006+/-85.137	 record: 439.045	 time_elapsed: 0.218
+Episode-9: p_loss: 3.163	 e_loss: 1.162	 time_elapsed: 0.23
+Vlidation at update-9: mean_flowtime_deterministic: 444.901+/-73.159	 record: 439.045	 time_elapsed: 0.237

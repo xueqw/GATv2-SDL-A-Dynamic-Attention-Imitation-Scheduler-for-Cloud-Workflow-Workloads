@@ -1,0 +1,30 @@
+[GPHH-mem] Loaded GP tree from /home/xue/GOODRL/logs/bestTree_5_5_0.0015.pkl
+[GPHH-mem] GP tree: multiply(maximum(FT, maximum(FT, subtract(add(1, FT), CU))), add(maximum(TS, add(ET, FT)), minimum(1, div(1, maximum(minimum(maximum(FT, 0), FT), minimum(1, CU))))))
+[GPHH-mem] Generating 500 training trajectories...
+[GPHH-mem] inst 20/500, samples=17065, last20 mean flowtime=389.0, elapsed=224s, ETA=5366s
+[GPHH-mem] inst 40/500, samples=34131, last20 mean flowtime=414.2, elapsed=448s, ETA=5146s
+[GPHH-mem] inst 60/500, samples=51176, last20 mean flowtime=367.6, elapsed=670s, ETA=4913s
+[GPHH-mem] inst 80/500, samples=68206, last20 mean flowtime=382.0, elapsed=892s, ETA=4685s
+[GPHH-mem] inst 100/500, samples=85314, last20 mean flowtime=432.6, elapsed=1117s, ETA=4467s
+[GPHH-mem] inst 120/500, samples=102405, last20 mean flowtime=363.9, elapsed=1341s, ETA=4246s
+[GPHH-mem] inst 140/500, samples=119515, last20 mean flowtime=422.3, elapsed=1566s, ETA=4027s
+[GPHH-mem] inst 160/500, samples=136637, last20 mean flowtime=425.6, elapsed=1793s, ETA=3809s
+[GPHH-mem] inst 180/500, samples=153794, last20 mean flowtime=409.0, elapsed=2018s, ETA=3588s
+[GPHH-mem] inst 200/500, samples=170932, last20 mean flowtime=404.0, elapsed=2243s, ETA=3365s
+[GPHH-mem] inst 220/500, samples=188082, last20 mean flowtime=433.7, elapsed=2469s, ETA=3143s
+[GPHH-mem] inst 240/500, samples=205195, last20 mean flowtime=400.9, elapsed=2695s, ETA=2919s
+[GPHH-mem] inst 260/500, samples=222275, last20 mean flowtime=377.6, elapsed=2919s, ETA=2694s
+[GPHH-mem] inst 280/500, samples=239326, last20 mean flowtime=427.8, elapsed=3143s, ETA=2469s
+[GPHH-mem] inst 300/500, samples=256362, last20 mean flowtime=394.8, elapsed=3365s, ETA=2243s
+[GPHH-mem] inst 320/500, samples=273456, last20 mean flowtime=390.6, elapsed=3590s, ETA=2019s
+[GPHH-mem] inst 340/500, samples=290534, last20 mean flowtime=412.3, elapsed=3816s, ETA=1796s
+[GPHH-mem] inst 360/500, samples=307614, last20 mean flowtime=392.4, elapsed=4039s, ETA=1571s
+[GPHH-mem] inst 380/500, samples=324768, last20 mean flowtime=407.8, elapsed=4267s, ETA=1347s
+[GPHH-mem] inst 400/500, samples=341864, last20 mean flowtime=386.4, elapsed=4491s, ETA=1123s
+[GPHH-mem] inst 420/500, samples=358925, last20 mean flowtime=408.0, elapsed=4716s, ETA=898s
+[GPHH-mem] inst 440/500, samples=376045, last20 mean flowtime=408.9, elapsed=4944s, ETA=674s
+[GPHH-mem] inst 460/500, samples=393113, last20 mean flowtime=417.4, elapsed=5168s, ETA=449s
+[GPHH-mem] inst 480/500, samples=410209, last20 mean flowtime=402.3, elapsed=5393s, ETA=225s
+[GPHH-mem] inst 500/500, samples=427349, last20 mean flowtime=407.5, elapsed=5619s, ETA=0s
+[GPHH-mem] Saved 427349 (state,action) pairs to /home/xue/GOODRL/validation_data/GPHH/GPHH_memory_500_5_5_0.0015.pkl
+[GPHH-mem] Mean episode flowtime: 403.14

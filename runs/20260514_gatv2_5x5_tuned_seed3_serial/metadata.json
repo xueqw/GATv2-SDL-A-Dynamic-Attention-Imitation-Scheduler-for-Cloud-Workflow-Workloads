@@ -1,0 +1,22 @@
+{
+  "run_id": "20260514_gatv2_5x5_tuned_seed3_serial",
+  "description": "Fully serial run (no joblib Parallel anywhere). Two prior attempts crashed with SIGSEGV in joblib workers due to pandas+fork issue in env code. Reverted step2.py to original. Expected ~40+ hours but most stable option.",
+  "parent_runs": [
+    "20260514_gatv2_5x5_tuned_seed3_parallel (crashed at update-440)",
+    "20260514_gatv2_5x5_tuned_seed3_safer (crashed at update-12 with rollout parallel only)"
+  ],
+  "architecture": "GATv2",
+  "step1_actor": "validation_data/step1/actors/a_5_5_0.0015.pth",
+  "command": "python -u step2.py --vm_types 5 --each_vm_type_num 5 --arr_rate 5.4 --lr_a 0.0001 --lr_c 0.001 --warmup_critic 500 --grad_control 0 --algo_seed 3 --entloss_coef 0.01",
+  "non_default_flags": {
+    "vm_types": 5, "each_vm_type_num": 5, "arr_rate": 5.4,
+    "lr_a": 0.0001, "lr_c": 0.001, "warmup_critic": 500,
+    "grad_control": 0, "algo_seed": 3, "entloss_coef": 0.01
+  },
+  "code_changes": {
+    "step2.py": "REVERTED to original (no joblib Parallel). actor3.py still GATv2."
+  },
+  "env_seed": 0, "algo_seed": 3,
+  "expected_total_hours": 40,
+  "status": "running"
+}

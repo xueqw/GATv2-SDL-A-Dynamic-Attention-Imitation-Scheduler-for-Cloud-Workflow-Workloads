@@ -1,0 +1,146 @@
+Vlidation at HEFT: mean_flowtime_deterministic: 521.875939+/-75.079270	 time_elapsed: 0.089074
+Vlidation at update-0: mean_flowtime_deterministic: 421.007858+/-68.341115	 mean_Entropy: 1.293121+/-0.046705	 record: 421.007858	 time_elapsed: 0.202508
+Episode-1: ep_meanFlowTime: 527.082309	 all_loss: 0.382652	 p_loss: -1.787886	 e_loss: 1.029638	 v_loss: 0.763065	 v_mre: 43.372074	 grad_changes: 0.000351	 time_elapsed: 0.2147
+Episode-2: ep_meanFlowTime: 375.690267	 all_loss: 0.095160	 p_loss: 0.348388	 e_loss: 1.024268	 v_loss: 0.190319	 v_mre: 39.620642	 grad_changes: 0.000000	 time_elapsed: 0.2247
+Episode-3: ep_meanFlowTime: 392.683690	 all_loss: 0.172722	 p_loss: -0.145919	 e_loss: 1.029395	 v_loss: 0.344980	 v_mre: 119.744182	 grad_changes: 0.000048	 time_elapsed: 0.2347
+Episode-4: ep_meanFlowTime: 439.690967	 all_loss: 0.115438	 p_loss: -0.204770	 e_loss: 1.036245	 v_loss: 0.230422	 v_mre: 31.779780	 grad_changes: 0.000045	 time_elapsed: 0.2440
+Episode-5: ep_meanFlowTime: 416.513024	 all_loss: 0.075210	 p_loss: -0.127296	 e_loss: 0.977591	 v_loss: 0.150420	 v_mre: 23.025238	 grad_changes: 0.000000	 time_elapsed: 0.2528
+Episode-6: ep_meanFlowTime: 422.916332	 all_loss: 0.123439	 p_loss: 0.383482	 e_loss: 0.951112	 v_loss: 0.246878	 v_mre: 66.557647	 grad_changes: 0.000000	 time_elapsed: 0.2626
+Episode-7: ep_meanFlowTime: 228.456881	 all_loss: 0.040758	 p_loss: 0.434185	 e_loss: 0.972260	 v_loss: 0.081045	 v_mre: 34.486052	 grad_changes: 0.000048	 time_elapsed: 0.2713
+Episode-8: ep_meanFlowTime: 490.257979	 all_loss: 0.170199	 p_loss: -0.597270	 e_loss: 0.896631	 v_loss: 0.340398	 v_mre: 238.517573	 grad_changes: 0.000000	 time_elapsed: 0.2817
+Episode-9: ep_meanFlowTime: 244.462479	 all_loss: 0.041757	 p_loss: 0.481382	 e_loss: 0.943463	 v_loss: 0.083515	 v_mre: 39.413132	 grad_changes: 0.000000	 time_elapsed: 0.2913
+Episode-10: ep_meanFlowTime: 329.446425	 all_loss: 0.075090	 p_loss: -0.167593	 e_loss: 0.878490	 v_loss: 0.150180	 v_mre: 39.406255	 grad_changes: 0.000000	 time_elapsed: 0.3024
+Episode-11: ep_meanFlowTime: 601.026872	 all_loss: 0.106149	 p_loss: -0.339848	 e_loss: 0.867387	 v_loss: 0.212297	 v_mre: 19.836556	 grad_changes: 0.000000	 time_elapsed: 0.3146
+Episode-12: ep_meanFlowTime: 355.603152	 all_loss: 0.077853	 p_loss: 0.492933	 e_loss: 0.880039	 v_loss: 0.155706	 v_mre: 32.065133	 grad_changes: 0.000000	 time_elapsed: 0.3246
+Fatal Python error: Segmentation fault
+
+Current thread 0x00007ed492853740 (most recent call first):
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/warnings.py", line 463 in __enter__
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/common.py", line 243 in asarray_tuplesafe
+  File Fatal Python error: "Segmentation fault/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexes/base.py
+
+"Current thread 0x, line 00007c8421569740524 (most recent call first):
+ in   File __new__"
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/warnings.py  File "", line /home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexes/base.py463" in , line __enter__7715
+ in   File ensure_index"
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/common.py  File "", line /home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexes/base.py243" in , line asarray_tuplesafe4410
+ in   File reindex"
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexes/base.py  File "Fatal Python error: ", line Segmentation fault/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexes/base.py6204
+
+" in Current thread 0x, line _get_indexer_strict00007dda613327406208
+ (most recent call first):
+ in   File   File _get_indexer_strict""
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py/home/xue/anaconda3/envs/drl_sched/lib/python3.10/warnings.py  File """, line , line /home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py1559463" in Fatal Python error:  in , line _get_listlike_indexerSegmentation fault__enter__1559
+
+
+
+ in   File Current thread 0x  File _get_listlike_indexer"00007d8458a9e740"
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py (most recent call first):
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/common.py  File "  File "", line ", line /home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py1523/home/xue/anaconda3/envs/drl_sched/lib/python3.10/warnings.py243" in " in , line _convert_to_indexer, line asarray_tuplesafe1523
+463
+ in   File  in   File _convert_to_indexer"__enter__"
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexes/base.py  File "  File "", line ", line /home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py990/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/common.py6204" in " in , line <listcomp>, line _get_indexer_strict990
+243
+ in   File  in   File <listcomp>"asarray_tuplesafe"
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py  File "  File "", line ", line /home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py990/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexes/base.py1559" in " in , line _convert_tuple, line _get_listlike_indexer990
+6204
+ in   File  in   File _convert_tuple"_get_indexer_strict"
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py  File "  File "", line ", line /home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py775/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py1523" in " in , line _get_setitem_indexer, line _convert_to_indexer775
+1559
+ in   File  in   File _get_setitem_indexer"_get_listlike_indexer"
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py  File "  File "", line ", line /home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py908/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py990" in " in , line __setitem__, line <listcomp>908
+1523
+ in   File  in   File __setitem__"_convert_to_indexer"
+/home/xue/GOODRL/env/workflow_scheduling_v3/lib/cloud_env_maxPktNum.py
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py  File "  File "", line ", line /home/xue/GOODRL/env/workflow_scheduling_v3/lib/cloud_env_maxPktNum.py458/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py990" in " in , line step, line _convert_tuple323
+990
+ in   File  in   File step"<listcomp>"
+/home/xue/GOODRL/env/workflow_scheduling_v3/simulator_wf.py
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py  File "  File "", line ", line /home/xue/GOODRL/env/workflow_scheduling_v3/simulator_wf.py51/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py775" in " in , line step, line _get_setitem_indexer51
+990
+ in   File  in   File step"_convert_tuple"
+/home/xue/GOODRL/step2.py
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py  File "  File "", line ", line /home/xue/GOODRL/step2.py77/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py908" in " in , line collect_whole_rollouts, line __setitem__77
+775
+ in   File  in   File collect_whole_rollouts"_get_setitem_indexer"
+/home/xue/GOODRL/step2.py
+/home/xue/GOODRL/env/workflow_scheduling_v3/lib/cloud_env_maxPktNum.py  File "  File "", line ", line /home/xue/GOODRL/step2.py125/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py323" in " in , line collect_parallel, line step125
+908
+ in   File  in   File collect_parallel"__setitem__"
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py
+/home/xue/GOODRL/env/workflow_scheduling_v3/simulator_wf.py  File "  File "", line ", line /home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py607/home/xue/GOODRL/env/workflow_scheduling_v3/lib/cloud_env_maxPktNum.py51" in " in , line <listcomp>, line step607
+323
+ in   File  in   File <listcomp>"step"
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py
+/home/xue/GOODRL/step2.py  File "  File "", line ", line /home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py607/home/xue/GOODRL/env/workflow_scheduling_v3/simulator_wf.py77" in " in , line __call__, line collect_whole_rollouts607
+51
+ in   File  in   File __call__"step"
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/process_executor.py
+/home/xue/GOODRL/step2.py  File "  File "", line ", line /home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/process_executor.py291/home/xue/GOODRL/step2.py125" in " in , line __call__, line collect_parallel291
+77
+ in __call__  File  in   File 
+"collect_whole_rollouts"  File /home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/process_executor.py
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py""  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/process_executor.py, line ", line "490/home/xue/GOODRL/step2.py607, line  in " in 490_process_worker, line <listcomp> in 
+125
+_process_worker  File  in   File 
+"collect_parallel"  File /home/xue/anaconda3/envs/drl_sched/lib/python3.10/multiprocessing/process.py
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py""  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/multiprocessing/process.py, line ", line "108/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py607 in , line  in "__call__108run, line 
+ in 
+607  File   File run in ""
+<listcomp>/home/xue/anaconda3/envs/drl_sched/lib/python3.10/multiprocessing/process.py/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/process_executor.py  File 
+"""  File , line , line /home/xue/anaconda3/envs/drl_sched/lib/python3.10/multiprocessing/process.py"314291"/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py in  in , line "_bootstrap__call__314, line 
+
+ in 607  File   File _bootstrap in ""
+__call__/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/backend/popen_loky_posix.py/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/process_executor.py  File 
+"""  File , line , line /home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/backend/popen_loky_posix.py"180490"/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/process_executor.py in  in , line "<module>_process_worker180, line 
+
+ in 291  File   File <module> in ""
+__call__/home/xue/anaconda3/envs/drl_sched/lib/python3.10/runpy.py/home/xue/anaconda3/envs/drl_sched/lib/python3.10/multiprocessing/process.py  File 
+"""  File , line , line /home/xue/anaconda3/envs/drl_sched/lib/python3.10/runpy.py"86108"/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/process_executor.py in  in , line "_run_coderun86, line 
+
+ in 490  File   File _run_code in ""
+_process_worker/home/xue/anaconda3/envs/drl_sched/lib/python3.10/runpy.py/home/xue/anaconda3/envs/drl_sched/lib/python3.10/multiprocessing/process.py  File 
+"""  File , line , line /home/xue/anaconda3/envs/drl_sched/lib/python3.10/runpy.py"196314"/home/xue/anaconda3/envs/drl_sched/lib/python3.10/multiprocessing/process.py in  in , line "_run_module_as_main_bootstrap196, line 
+
+ in 108_run_module_as_main  File  in 
+"run/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/backend/popen_loky_posix.py
+"  File , line "180/home/xue/anaconda3/envs/drl_sched/lib/python3.10/multiprocessing/process.py in "<module>, line 
+314  File  in "_bootstrap/home/xue/anaconda3/envs/drl_sched/lib/python3.10/runpy.py
+"  File , line "86/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/backend/popen_loky_posix.py in "_run_code, line 
+180  File  in "<module>/home/xue/anaconda3/envs/drl_sched/lib/python3.10/runpy.py
+"  File , line "196/home/xue/anaconda3/envs/drl_sched/lib/python3.10/runpy.py in "_run_module_as_main, line 
+86 in _run_code
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/runpy.py", line 196 in _run_module_as_main
+
+Extension modules: psutil._psutil_linux
+Extension modules: psutil._psutil_linux, numpy._core._multiarray_umath, numpy._core._multiarray_umath, numpy.linalg._umath_linalg, numpy.linalg._umath_linalg, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._common, numpy.random._mt19937, numpy.random.bit_generator, , numpy.random.mtrand
+Extension modules: numpy.random._bounded_integerspsutil._psutil_linux, numpy.random._philox, , , numpy.random._mt19937
+Extension modules: numpy._core._multiarray_umathnumpy.random._pcg64psutil._psutil_linux, numpy.random.mtrand, numpy.linalg._umath_linalg, , , numpy.random._sfc64numpy._core._multiarray_umathnumpy.random._philox, numpy.random._pcg64, , numpy.random._generatornumpy.linalg._umath_linalg, numpy.random._sfc64, , numpy.random._common, pandas._libs.tslibs.ccalendarnumpy.random._generator, numpy.random.bit_generator, , numpy.random._bounded_integers, pandas._libs.tslibs.np_datetimepandas._libs.tslibs.ccalendar, pandas._libs.tslibs.dtypes, , numpy.random._mt19937numpy.random._common, , pandas._libs.tslibs.np_datetimepandas._libs.tslibs.base, numpy.random.bit_generator, numpy.random.mtrand, pandas._libs.tslibs.dtypes, pandas._libs.tslibs.nattype, , numpy.random._philox, numpy.random._bounded_integerspandas._libs.tslibs.base, , pandas._libs.tslibs.timezones, numpy.random._pcg64, numpy.random._mt19937, pandas._libs.tslibs.nattypepandas._libs.tslibs.fields, numpy.random._sfc64, numpy.random.mtrand, pandas._libs.tslibs.timedeltas, , , pandas._libs.tslibs.timezonesnumpy.random._generatornumpy.random._philox, pandas._libs.tslibs.tzconversion, , , pandas._libs.tslibs.fieldspandas._libs.tslibs.ccalendar, numpy.random._pcg64pandas._libs.tslibs.timestamps, pandas._libs.tslibs.timedeltas, pandas._libs.tslibs.np_datetime, , , numpy.random._sfc64pandas._libs.tslibs.tzconversionpandas._libs.properties, pandas._libs.tslibs.dtypes, , , numpy.random._generatorpandas._libs.tslibs.timestampspandas._libs.tslibs.offsets, pandas._libs.tslibs.base, , pandas._libs.propertiespandas._libs.tslibs.ccalendar, , pandas._libs.tslibs.nattypepandas._libs.tslibs.strptime, pandas._libs.tslibs.offsets, pandas._libs.tslibs.np_datetime, pandas._libs.tslibs.strptime, , , pandas._libs.tslibs.parsing, pandas._libs.tslibs.timezonespandas._libs.tslibs.dtypespandas._libs.tslibs.parsing, , , pandas._libs.tslibs.conversionpandas._libs.tslibs.fieldspandas._libs.tslibs.conversion, pandas._libs.tslibs.base, , , pandas._libs.tslibs.timedeltaspandas._libs.tslibs.period, pandas._libs.tslibs.period, pandas._libs.tslibs.nattypepandas._libs.tslibs.tzconversion, , pandas._libs.tslibs.vectorizedpandas._libs.tslibs.vectorized, , pandas._libs.tslibs.timestamps, pandas._libs.ops_dispatch, pandas._libs.tslibs.timezonespandas._libs.ops_dispatch, , pandas._libs.missingpandas._libs.properties, , pandas._libs.missingpandas._libs.tslibs.fields, , pandas._libs.tslibs.offsets, pandas._libs.hashtable, pandas._libs.hashtablepandas._libs.tslibs.timedeltas, , pandas._libs.algos, pandas._libs.algos, , pandas._libs.tslibs.tzconversionpandas._libs.tslibs.strptimepandas._libs.interval, pandas._libs.interval, , , , pandas._libs.tslibs.timestampspandas._libs.libpandas._libs.tslibs.parsingpandas._libs.lib, , pandas._libs.properties, pandas._libs.opspandas._libs.tslibs.conversion, pandas._libs.tslibs.offsets, , , pandas._libs.opspandas._libs.hashing, pandas._libs.tslibs.periodpandas._libs.tslibs.strptime, , , pandas._libs.arrayspandas._libs.hashingpandas._libs.tslibs.vectorized, pandas._libs.tslibs.parsing, pandas._libs.arrays, , , pandas._libs.ops_dispatchpandas._libs.tslibs.conversionpandas._libs.tslib, , , pandas._libs.missingpandas._libs.tslibs.periodpandas._libs.tslib, , , pandas._libs.sparsepandas._libs.hashtablepandas._libs.tslibs.vectorized, pandas._libs.sparse, , pandas._libs.internalspandas._libs.algos, , pandas._libs.internals, pandas._libs.ops_dispatch, pandas._libs.intervalpandas._libs.indexing, , , , pandas._libs.indexingpandas._libs.missingpandas._libs.libpandas._libs.index, , pandas._libs.indexpandas._libs.hashtable, , , pandas._libs.opspandas._libs.writers, pandas._libs.algospandas._libs.writers, , , , pandas._libs.hashingpandas._libs.joinpandas._libs.intervalpandas._libs.join, pandas._libs.arrays, pandas._libs.lib, pandas._libs.window.aggregations, pandas._libs.tslib, pandas._libs.window.aggregations, , pandas._libs.window.indexers, pandas._libs.ops, pandas._libs.window.indexerspandas._libs.sparse, , pandas._libs.reshapepandas._libs.hashing, , pandas._libs.reshapepandas._libs.internals, , pandas._libs.groupbypandas._libs.arrays, , pandas._libs.groupbypandas._libs.indexing, pandas._libs.json, , pandas._libs.tslib, pandas._libs.jsonpandas._libs.index, , pandas._libs.parsers, , pandas._libs.sparsepandas._libs.writerspandas._libs.parsers, pandas._libs.internals, , , , pandas._libs.testingpandas._libs.joinpandas._libs.testingpandas._libs.indexing, pandas._libs.index, pandas._libs.window.aggregations, pandas._libs.writers, pandas._libs.join, pandas._libs.window.indexers, pandas._libs.reshape, , , pandas._libs.window.aggregationstorch._Cpandas._libs.groupby, torch._C, , pandas._libs.window.indexers, torch._C._dynamo.autograd_compilertorch._C._dynamo.autograd_compiler, pandas._libs.json, , pandas._libs.reshape, torch._C._dynamo.eval_frame, pandas._libs.parserstorch._C._dynamo.eval_frame, torch._C._dynamo.guards, , , torch._C._dynamo.guards, pandas._libs.groupbypandas._libs.testingtorch._C._dynamo.utils, , , torch._C._ffttorch._C._dynamo.utilspandas._libs.json, torch._C._linalg, , torch._C._fftpandas._libs.parsers, torch._C._nested, , torch._C._nntorch._C._linalg, pandas._libs.testing, torch._C._nested, , torch._C._sparsetorch._C, torch._C._nn, torch._C._special, torch._C._dynamo.autograd_compiler, torch._C._sparse, torch._C._dynamo.eval_frame, torch._C._special, torch._C._dynamo.guards, torch._C, torch._C._dynamo.utils, torch._C._dynamo.autograd_compiler, torch._C._fft, , torch._C._linalgtorch._C._dynamo.eval_frame, torch._C._nested, torch._C._dynamo.guards, torch._C._nn, , xxhash._xxhashtorch._C._dynamo.utils, torch._C._sparse, , , xxhash._xxhashtorch._C._ffttorch._C._special, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, xxhash._xxhash, , markupsafe._speedupsxxhash._xxhash, markupsafe._speedups, charset_normalizer.md, charset_normalizer.md, charset_normalizer.cd, charset_normalizer.cd, markupsafe._speedups, , requests.packages.charset_normalizer.mdrequests.packages.charset_normalizer.md, , requests.packages.chardet.mdrequests.packages.chardet.md, requests.packages.charset_normalizer.cd, requests.packages.charset_normalizer.cd, requests.packages.chardet.cd, , , charset_normalizer.mdrequests.packages.chardet.cdmarkupsafe._speedups (total: 71)
+,  (total: charset_normalizer.cd71)
+, charset_normalizer.md, requests.packages.charset_normalizer.md, charset_normalizer.cd, requests.packages.chardet.md, requests.packages.charset_normalizer.cd, requests.packages.chardet.cd, requests.packages.charset_normalizer.md, requests.packages.chardet.md, requests.packages.charset_normalizer.cd (total: 71, )requests.packages.chardet.cd
+ (total: 71)
+Traceback (most recent call last):
+  File "/home/xue/GOODRL/step2.py", line 245, in <module>
+    main()
+  File "/home/xue/GOODRL/step2.py", line 206, in main
+    outputs = Parallel(n_jobs=configs.num_envs)(delayed(collect_parallel)( i_update, algos.actor, algos.critic ) for _ in range(configs.num_envs)) 
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+joblib.externals.loky.process_executor.TerminatedWorkerError: A worker process managed by the executor was unexpectedly terminated. This could be caused by a segmentation fault while calling the function or by an excessive memory usage causing the Operating System to kill the worker.
+
+The exit codes of the workers are {SIGSEGV(-11)}
+Detailed tracebacks of the workers should have been printed to stderr in the executor process if faulthandler was not disabled.

@@ -1,0 +1,18 @@
+==================================================
+Watchdog start: Sat May 16 01:44:25 PM CST 2026
+Run dir: /home/xue/GOODRL/runs/20260516_actor_attn_full
+Args: --vm_types 5 --each_vm_type_num 5 --arr_rate 5.4 --lr_a 0.0001 --lr_c 0.001 --warmup_critic 500 --max_updates 1000 --grad_control 0 --algo_seed 3 --entloss_coef 0.01 --actor_atten_layers 1 --checkpoint_interval 50
+==================================================
+[Sat May 16 01:44:25 PM CST 2026] === Attempt 1: starting fresh ===
+Vlidation at HEFT: mean_flowtime_deterministic: 521.875939+/-75.079270	 time_elapsed: 0.006662
+Vlidation at update-0: mean_flowtime_deterministic: 896.885524+/-124.987737	 mean_Entropy: 2.669690+/-0.058448	 record: 896.885524	 time_elapsed: 0.017267
+Traceback (most recent call last):
+  File "/home/xue/GOODRL/step2.py", line 311, in <module>
+    main()
+  File "/home/xue/GOODRL/step2.py", line 271, in main
+    allloss, grad_changes = algos.train(new_buffer)
+  File "/home/xue/GOODRL/policy/actor3.py", line 1063, in train
+    self.entropy_count +=1
+AttributeError: 'PPO' object has no attribute 'entropy_count'
+[Sat May 16 01:45:54 PM CST 2026] === Attempt 1 ended, exit code: 1 ===
+[Sat May 16 01:45:54 PM CST 2026] No checkpoint written yet (early crash). Likely code bug, not hardware. Aborting watchdog.

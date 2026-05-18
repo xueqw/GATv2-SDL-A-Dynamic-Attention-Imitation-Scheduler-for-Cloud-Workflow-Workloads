@@ -1,0 +1,24 @@
+{
+  "run_id": "20260514_gatv2_5x5_tuned_seed3_safer",
+  "description": "Restart of crashed _parallel run with validation_Org Parallel n_jobs set to 1 (serial-via-joblib, no subprocess fork) to avoid PyTorch+joblib SIGSEGV. HEFT validation and rollout still parallel.",
+  "parent_run": "20260514_gatv2_5x5_tuned_seed3_parallel (crashed at update-440, best record=415.42)",
+  "architecture": "GATv2",
+  "step1_actor": "validation_data/step1/actors/a_5_5_0.0015.pth (FRESH RESTART, not continuing from saved checkpoint)",
+  "command": "python -u step2.py --vm_types 5 --each_vm_type_num 5 --arr_rate 5.4 --lr_a 0.0001 --lr_c 0.001 --warmup_critic 500 --grad_control 0 --algo_seed 3 --entloss_coef 0.01",
+  "non_default_flags": {
+    "vm_types": 5, "each_vm_type_num": 5, "arr_rate": 5.4,
+    "lr_a": 0.0001, "lr_c": 0.001, "warmup_critic": 500,
+    "grad_control": 0, "algo_seed": 3, "entloss_coef": 0.01
+  },
+  "code_changes": {
+    "step2.py": "Line 186 and 228: validation_Org Parallel n_jobs=1 (was -1). Lines 160 (HEFT) and 206 (rollout) remain parallel. See step2.py.bak_parallel_full."
+  },
+  "env_seed": 0, "algo_seed": 3,
+  "started_at": "starting",
+  "status": "running",
+  "expected_milestones": {
+    "update_440": "previous crash point - should pass cleanly",
+    "update_500": "end of warmup_critic",
+    "update_1200": "end of training (3% improvement target ~408)"
+  }
+}

@@ -1,0 +1,23 @@
+Vlidation at HEFT: mean_flowtime_deterministic: 521.876+/-75.079	 time_elapsed: 0.089
+Vlidation at update-0: mean_flowtime_deterministic: 750.338+/-134.190	 record: 750.338	 time_elapsed: 0.221
+Episode-1: p_loss: 3.218	 e_loss: 3.218	 time_elapsed: 0.23
+Vlidation at update-1: mean_flowtime_deterministic: 468.165+/-84.112	 record: 468.165	 time_elapsed: 0.360
+Episode-2: p_loss: 3.200	 e_loss: 2.821	 time_elapsed: 0.37
+Vlidation at update-2: mean_flowtime_deterministic: 470.453+/-82.415	 record: 468.165	 time_elapsed: 0.499
+Episode-3: p_loss: 3.172	 e_loss: 1.709	 time_elapsed: 0.51
+Vlidation at update-3: mean_flowtime_deterministic: 634.960+/-83.754	 record: 468.165	 time_elapsed: 0.639
+Episode-4: p_loss: 3.167	 e_loss: 1.414	 time_elapsed: 0.65
+Vlidation at update-4: mean_flowtime_deterministic: 670.844+/-88.932	 record: 468.165	 time_elapsed: 0.780
+Episode-5: p_loss: 3.165	 e_loss: 1.297	 time_elapsed: 0.79
+Vlidation at update-5: mean_flowtime_deterministic: 676.672+/-95.332	 record: 468.165	 time_elapsed: 0.920
+Episode-6: p_loss: 3.165	 e_loss: 1.237	 time_elapsed: 0.93
+Vlidation at update-6: mean_flowtime_deterministic: 663.978+/-100.503	 record: 468.165	 time_elapsed: 1.061
+Episode-7: p_loss: 3.164	 e_loss: 1.195	 time_elapsed: 1.07
+Vlidation at update-7: mean_flowtime_deterministic: 641.004+/-91.305	 record: 468.165	 time_elapsed: 1.202
+Episode-8: p_loss: 3.163	 e_loss: 1.166	 time_elapsed: 1.21
+Vlidation at update-8: mean_flowtime_deterministic: 615.959+/-83.699	 record: 468.165	 time_elapsed: 1.343
+Episode-9: p_loss: 3.162	 e_loss: 1.142	 time_elapsed: 1.35
+Vlidation at update-9: mean_flowtime_deterministic: 588.904+/-82.162	 record: 468.165	 time_elapsed: 1.485
+Episode-10: p_loss: 3.161	 e_loss: 1.124	 time_elapsed: 1.50
+Vlidation at update-10: mean_flowtime_deterministic: 574.819+/-71.975	 record: 468.165	 time_elapsed: 1.628
+>>>Overall Runtime is  1.6281774652666516  hours

@@ -1,0 +1,24 @@
+[teacher] Using GPHH memory: ./validation_data/GPHH/GPHH_memory_500_5_5_0.0015.pkl
+Vlidation at HEFT: mean_flowtime_deterministic: 521.876+/-75.079	 time_elapsed: 0.090
+Vlidation at update-0: mean_flowtime_deterministic: 149679.067+/-36023.523	 record: 149679.067	 time_elapsed: 0.335
+Episode-1: p_loss: 2.970	 e_loss: 0.881	 time_elapsed: 1.03
+Vlidation at update-1: mean_flowtime_deterministic: 413.349+/-69.426	 record: 413.349	 time_elapsed: 1.136
+Episode-2: p_loss: 2.921	 e_loss: 0.544	 time_elapsed: 1.60
+Vlidation at update-2: mean_flowtime_deterministic: 412.563+/-68.875	 record: 412.563	 time_elapsed: 1.707
+Episode-3: p_loss: 2.891	 e_loss: 0.466	 time_elapsed: 2.14
+Vlidation at update-3: mean_flowtime_deterministic: 413.472+/-70.058	 record: 412.563	 time_elapsed: 2.250
+Episode-4: p_loss: 2.874	 e_loss: 0.408	 time_elapsed: 2.67
+Vlidation at update-4: mean_flowtime_deterministic: 415.500+/-71.312	 record: 412.563	 time_elapsed: 2.779
+Episode-5: p_loss: 2.866	 e_loss: 0.316	 time_elapsed: 3.19
+Vlidation at update-5: mean_flowtime_deterministic: 415.769+/-70.294	 record: 412.563	 time_elapsed: 3.297
+Episode-6: p_loss: 2.858	 e_loss: 0.266	 time_elapsed: 3.71
+Vlidation at update-6: mean_flowtime_deterministic: 415.100+/-68.956	 record: 412.563	 time_elapsed: 3.817
+Episode-7: p_loss: 2.856	 e_loss: 0.268	 time_elapsed: 4.23
+Vlidation at update-7: mean_flowtime_deterministic: 437.499+/-78.183	 record: 412.563	 time_elapsed: 4.338
+Episode-8: p_loss: 2.857	 e_loss: 0.271	 time_elapsed: 4.75
+Vlidation at update-8: mean_flowtime_deterministic: 417.397+/-70.545	 record: 412.563	 time_elapsed: 4.863
+Episode-9: p_loss: 2.863	 e_loss: 0.197	 time_elapsed: 5.26
+Vlidation at update-9: mean_flowtime_deterministic: 455.152+/-81.150	 record: 412.563	 time_elapsed: 5.373
+Episode-10: p_loss: 2.863	 e_loss: 0.181	 time_elapsed: 5.78
+Vlidation at update-10: mean_flowtime_deterministic: 418.868+/-68.822	 record: 412.563	 time_elapsed: 5.890
+>>>Overall Runtime is  5.890518911547131  hours

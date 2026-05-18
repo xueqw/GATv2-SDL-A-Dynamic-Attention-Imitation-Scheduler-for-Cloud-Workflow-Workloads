@@ -1,0 +1,24 @@
+[teacher] Using HEFT memory: ./validation_data/HEFT/HEFT_memory_500_6_4_0.0025.pkl
+Vlidation at HEFT: mean_flowtime_deterministic: 363.599+/-54.010	 time_elapsed: 0.088
+Vlidation at update-0: mean_flowtime_deterministic: 161976.090+/-31668.686	 record: 161976.090	 time_elapsed: 0.340
+Episode-1: p_loss: 3.178	 e_loss: 3.178	 time_elapsed: 0.35
+Vlidation at update-1: mean_flowtime_deterministic: 324.643+/-51.635	 record: 324.643	 time_elapsed: 0.456
+Episode-2: p_loss: 3.159	 e_loss: 2.825	 time_elapsed: 0.46
+Vlidation at update-2: mean_flowtime_deterministic: 316.154+/-51.652	 record: 316.154	 time_elapsed: 0.573
+Episode-3: p_loss: 3.126	 e_loss: 1.684	 time_elapsed: 0.58
+Vlidation at update-3: mean_flowtime_deterministic: 311.504+/-50.537	 record: 311.504	 time_elapsed: 0.690
+Episode-4: p_loss: 3.118	 e_loss: 1.325	 time_elapsed: 0.70
+Vlidation at update-4: mean_flowtime_deterministic: 310.823+/-50.743	 record: 310.823	 time_elapsed: 0.807
+Episode-5: p_loss: 3.116	 e_loss: 1.148	 time_elapsed: 0.82
+Vlidation at update-5: mean_flowtime_deterministic: 316.671+/-52.929	 record: 310.823	 time_elapsed: 0.924
+Episode-6: p_loss: 3.113	 e_loss: 1.301	 time_elapsed: 0.93
+Vlidation at update-6: mean_flowtime_deterministic: 321.551+/-50.404	 record: 310.823	 time_elapsed: 1.041
+Episode-7: p_loss: 3.109	 e_loss: 1.258	 time_elapsed: 1.05
+Vlidation at update-7: mean_flowtime_deterministic: 315.866+/-50.837	 record: 310.823	 time_elapsed: 1.160
+Episode-8: p_loss: 3.107	 e_loss: 1.213	 time_elapsed: 1.17
+Vlidation at update-8: mean_flowtime_deterministic: 317.539+/-49.673	 record: 310.823	 time_elapsed: 1.280
+Episode-9: p_loss: 3.111	 e_loss: 1.037	 time_elapsed: 1.29
+Vlidation at update-9: mean_flowtime_deterministic: 312.437+/-51.317	 record: 310.823	 time_elapsed: 1.401
+Episode-10: p_loss: 3.108	 e_loss: 1.164	 time_elapsed: 1.41
+Vlidation at update-10: mean_flowtime_deterministic: 316.051+/-50.246	 record: 310.823	 time_elapsed: 1.522
+>>>Overall Runtime is  1.5223974463674756  hours

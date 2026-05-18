@@ -1,0 +1,188 @@
+==================================================
+Watchdog start: Mon May 18 02:15:24 PM CST 2026
+Run dir: runs/20260517_gphh_teacher_pipeline
+Args: --vm_types 5 --each_vm_type_num 5 --arr_rate 5.4 --lr_a 0.0001 --lr_c 0.001 --warmup_critic 500 --max_updates 1000 --grad_control 0 --algo_seed 3 --entloss_coef 0.01 --entropy_control 1 --entropy_min 0.3 --entropy_max 0.6 --teacher gphh --actor_pointer 0 --actor_atten_layers 0 --checkpoint_interval 20
+==================================================
+[Mon May 18 02:15:24 PM CST 2026] === Attempt 1: starting fresh ===
+Vlidation at HEFT: mean_flowtime_deterministic: 521.875939+/-75.079270	 time_elapsed: 0.006675
+Vlidation at update-0: mean_flowtime_deterministic: 412.564302+/-68.874040	 mean_Entropy: 0.507977+/-0.074922	 record: 412.564302	 time_elapsed: 0.015834
+Episode-1: ep_meanFlowTime: 503.668201	 all_loss: 0.372741	 p_loss: -1.740128	 e_loss: 0.404120	 v_loss: 0.745451	 v_mre: 44.888990	 grad_changes: 0.000641	 time_elapsed: 0.0260
+Episode-2: ep_meanFlowTime: 369.763306	 all_loss: 0.100300	 p_loss: 0.486476	 e_loss: 0.414044	 v_loss: 0.200553	 v_mre: 41.046071	 grad_changes: 0.000397	 time_elapsed: 0.0342
+Episode-3: ep_meanFlowTime: 378.329782	 all_loss: 0.121641	 p_loss: -0.111138	 e_loss: 0.390688	 v_loss: 0.243262	 v_mre: 115.999887	 grad_changes: 0.000235	 time_elapsed: 0.0422
+Episode-4: ep_meanFlowTime: 432.918698	 all_loss: 0.114304	 p_loss: -0.335620	 e_loss: 0.434984	 v_loss: 0.228460	 v_mre: 32.908322	 grad_changes: 0.003782	 time_elapsed: 0.0498
+Episode-5: ep_meanFlowTime: 411.602571	 all_loss: 0.064481	 p_loss: -0.140367	 e_loss: 0.443146	 v_loss: 0.128277	 v_mre: 20.888401	 grad_changes: 0.001113	 time_elapsed: 0.0573
+Episode-6: ep_meanFlowTime: 413.608516	 all_loss: 0.097296	 p_loss: 0.188118	 e_loss: 0.385616	 v_loss: 0.194703	 v_mre: 65.277954	 grad_changes: 0.000026	 time_elapsed: 0.0660
+Episode-7: ep_meanFlowTime: 223.073366	 all_loss: 0.029169	 p_loss: 0.175553	 e_loss: 0.424478	 v_loss: 0.058433	 v_mre: 31.257191	 grad_changes: 0.000152	 time_elapsed: 0.0737
+Episode-8: ep_meanFlowTime: 461.790880	 all_loss: 0.132556	 p_loss: -0.567342	 e_loss: 0.443634	 v_loss: 0.265113	 v_mre: 193.286700	 grad_changes: 0.000000	 time_elapsed: 0.0824
+Episode-9: ep_meanFlowTime: 238.819210	 all_loss: 0.041607	 p_loss: 0.332495	 e_loss: 0.413213	 v_loss: 0.082958	 v_mre: 39.138528	 grad_changes: 0.000641	 time_elapsed: 0.0906
+Episode-10: ep_meanFlowTime: 334.986574	 all_loss: 0.078430	 p_loss: -0.281454	 e_loss: 0.339703	 v_loss: 0.158254	 v_mre: 41.065294	 grad_changes: 0.002907	 time_elapsed: 0.0996
+Episode-11: ep_meanFlowTime: 623.333005	 all_loss: 0.118469	 p_loss: -0.351575	 e_loss: 0.424427	 v_loss: 0.237144	 v_mre: 20.376985	 grad_changes: 0.000106	 time_elapsed: 0.1098
+Episode-12: ep_meanFlowTime: 356.154055	 all_loss: 0.085237	 p_loss: 0.518588	 e_loss: 0.435931	 v_loss: 0.170252	 v_mre: 36.013211	 grad_changes: 0.000100	 time_elapsed: 0.1183
+Episode-13: ep_meanFlowTime: 448.839883	 all_loss: 0.121841	 p_loss: -0.144302	 e_loss: 0.382464	 v_loss: 0.244174	 v_mre: 42.694673	 grad_changes: 0.000825	 time_elapsed: 0.1271
+Episode-14: ep_meanFlowTime: 383.513936	 all_loss: 0.063971	 p_loss: 0.290603	 e_loss: 0.435463	 v_loss: 0.127803	 v_mre: 28.007225	 grad_changes: 0.000271	 time_elapsed: 0.1354
+Episode-15: ep_meanFlowTime: 442.528482	 all_loss: 0.078295	 p_loss: -0.325472	 e_loss: 0.449779	 v_loss: 0.156832	 v_mre: 25.068950	 grad_changes: 0.001130	 time_elapsed: 0.1431
+Episode-16: ep_meanFlowTime: 307.690267	 all_loss: 0.051021	 p_loss: 0.334158	 e_loss: 0.443495	 v_loss: 0.101527	 v_mre: 34.688174	 grad_changes: 0.001036	 time_elapsed: 0.1510
+Episode-17: ep_meanFlowTime: 469.521869	 all_loss: 0.065619	 p_loss: -0.393484	 e_loss: 0.431758	 v_loss: 0.131329	 v_mre: 22.471659	 grad_changes: 0.000976	 time_elapsed: 0.1588
+Episode-18: ep_meanFlowTime: 533.818872	 all_loss: 0.097180	 p_loss: -0.156725	 e_loss: 0.444594	 v_loss: 0.194229	 v_mre: 16.807271	 grad_changes: 0.000260	 time_elapsed: 0.1680
+Episode-19: ep_meanFlowTime: 431.950174	 all_loss: 0.087020	 p_loss: -0.053146	 e_loss: 0.451106	 v_loss: 0.173913	 v_mre: 32.321125	 grad_changes: 0.000296	 time_elapsed: 0.1767
+Episode-20: ep_meanFlowTime: 406.000401	 all_loss: 0.119016	 p_loss: -0.340423	 e_loss: 0.491868	 v_loss: 0.237338	 v_mre: 48.887989	 grad_changes: 0.000726	 time_elapsed: 0.1847
+Vlidation at update-20: mean_flowtime_deterministic: 418.769317+/-70.032512	 mean_Entropy: 0.463652+/-0.055351	 record: 412.564302	 time_elapsed: 0.1945
+[ckpt] saved runs/20260517_gphh_teacher_pipeline/checkpoints/state_latest.pth at i_update=19
+[ckpt] saved runs/20260517_gphh_teacher_pipeline/checkpoints/state_20.pth at i_update=19
+Episode-21: ep_meanFlowTime: 436.592082	 all_loss: 0.072335	 p_loss: -0.024658	 e_loss: 0.474968	 v_loss: 0.144441	 v_mre: 28.969312	 grad_changes: 0.000166	 time_elapsed: 0.2027
+Episode-22: ep_meanFlowTime: 459.860426	 all_loss: 0.127364	 p_loss: 0.136913	 e_loss: 0.429619	 v_loss: 0.254795	 v_mre: 28.694178	 grad_changes: 0.000517	 time_elapsed: 0.2114
+Episode-23: ep_meanFlowTime: 434.027113	 all_loss: 0.077637	 p_loss: 0.084290	 e_loss: 0.394871	 v_loss: 0.155121	 v_mre: 26.476065	 grad_changes: 0.000308	 time_elapsed: 0.2198
+Episode-24: ep_meanFlowTime: 573.835354	 all_loss: 0.159056	 p_loss: -0.332138	 e_loss: 0.446247	 v_loss: 0.318218	 v_mre: 29.518916	 grad_changes: 0.000088	 time_elapsed: 0.2288
+Episode-25: ep_meanFlowTime: 410.175829	 all_loss: 0.083208	 p_loss: 0.059868	 e_loss: 0.425170	 v_loss: 0.166151	 v_mre: 30.312343	 grad_changes: 0.000842	 time_elapsed: 0.2370
+Episode-26: ep_meanFlowTime: 398.808612	 all_loss: 0.054704	 p_loss: 0.041664	 e_loss: 0.471110	 v_loss: 0.109386	 v_mre: 83.336942	 grad_changes: 0.000254	 time_elapsed: 0.2456
+Episode-27: ep_meanFlowTime: 425.932723	 all_loss: 0.143290	 p_loss: -0.376357	 e_loss: 0.444792	 v_loss: 0.286240	 v_mre: 40.796431	 grad_changes: 0.000384	 time_elapsed: 0.2543
+Episode-28: ep_meanFlowTime: 501.950696	 all_loss: 0.175076	 p_loss: -0.174451	 e_loss: 0.408611	 v_loss: 0.349984	 v_mre: 131.181799	 grad_changes: 0.000569	 time_elapsed: 0.2622
+Episode-29: ep_meanFlowTime: 468.918091	 all_loss: 0.137547	 p_loss: 0.501468	 e_loss: 0.412566	 v_loss: 0.275303	 v_mre: 33.236004	 grad_changes: 0.000135	 time_elapsed: 0.2705
+Episode-30: ep_meanFlowTime: 596.571141	 all_loss: 0.147697	 p_loss: -0.458336	 e_loss: 0.443497	 v_loss: 0.295166	 v_mre: 19.209175	 grad_changes: 0.000211	 time_elapsed: 0.2791
+Episode-31: ep_meanFlowTime: 359.700482	 all_loss: 0.077039	 p_loss: 0.235776	 e_loss: 0.443209	 v_loss: 0.154185	 v_mre: 31.882425	 grad_changes: 0.000133	 time_elapsed: 0.2870
+Episode-32: ep_meanFlowTime: 305.519116	 all_loss: 0.038573	 p_loss: 0.249761	 e_loss: 0.440843	 v_loss: 0.076999	 v_mre: 35.024263	 grad_changes: 0.000375	 time_elapsed: 0.2945
+Episode-33: ep_meanFlowTime: 337.144112	 all_loss: 0.056808	 p_loss: -0.237408	 e_loss: 0.420605	 v_loss: 0.113144	 v_mre: 25.683513	 grad_changes: 0.000703	 time_elapsed: 0.3019
+Episode-34: ep_meanFlowTime: 351.756485	 all_loss: 0.065441	 p_loss: -0.043777	 e_loss: 0.444488	 v_loss: 0.130810	 v_mre: 135.983737	 grad_changes: 0.000857	 time_elapsed: 0.3099
+Episode-35: ep_meanFlowTime: 407.457671	 all_loss: 0.135364	 p_loss: 0.285690	 e_loss: 0.447723	 v_loss: 0.270495	 v_mre: 164.788571	 grad_changes: 0.000155	 time_elapsed: 0.3192
+Episode-36: ep_meanFlowTime: 382.371939	 all_loss: 0.041299	 p_loss: -0.042489	 e_loss: 0.393738	 v_loss: 0.083272	 v_mre: 39.478913	 grad_changes: 0.000857	 time_elapsed: 0.3273
+Episode-37: ep_meanFlowTime: 352.740617	 all_loss: 0.100634	 p_loss: 0.046418	 e_loss: 0.491575	 v_loss: 0.200771	 v_mre: 30.001396	 grad_changes: 0.000736	 time_elapsed: 0.3362
+Episode-38: ep_meanFlowTime: 457.128512	 all_loss: 0.136662	 p_loss: -0.185332	 e_loss: 0.417984	 v_loss: 0.273190	 v_mre: 42.944780	 grad_changes: 0.000256	 time_elapsed: 0.3443
+Episode-39: ep_meanFlowTime: 479.955824	 all_loss: 0.102122	 p_loss: 0.116998	 e_loss: 0.376370	 v_loss: 0.205333	 v_mre: 121.463154	 grad_changes: 0.001400	 time_elapsed: 0.3533
+Episode-40: ep_meanFlowTime: 617.446046	 all_loss: 0.139471	 p_loss: -0.885928	 e_loss: 0.545927	 v_loss: 0.276235	 v_mre: 21.429921	 grad_changes: 0.001994	 time_elapsed: 0.3626
+Vlidation at update-40: mean_flowtime_deterministic: 431.052617+/-68.239301	 mean_Entropy: 0.423503+/-0.067683	 record: 412.564302	 time_elapsed: 0.3724
+[ckpt] saved runs/20260517_gphh_teacher_pipeline/checkpoints/state_latest.pth at i_update=39
+[ckpt] saved runs/20260517_gphh_teacher_pipeline/checkpoints/state_40.pth at i_update=39
+Episode-41: ep_meanFlowTime: 355.785773	 all_loss: 0.041876	 p_loss: 0.311970	 e_loss: 0.407660	 v_loss: 0.084057	 v_mre: 20.506457	 grad_changes: 0.000594	 time_elapsed: 0.3812
+Episode-42: ep_meanFlowTime: 349.491461	 all_loss: 0.062042	 p_loss: 0.040364	 e_loss: 0.396799	 v_loss: 0.124586	 v_mre: 70.301975	 grad_changes: 0.000604	 time_elapsed: 0.3908
+Episode-43: ep_meanFlowTime: 346.734735	 all_loss: 0.069078	 p_loss: -0.225031	 e_loss: 0.413770	 v_loss: 0.138107	 v_mre: 78.899614	 grad_changes: 0.001488	 time_elapsed: 0.3983
+Episode-44: ep_meanFlowTime: 448.199447	 all_loss: 0.056464	 p_loss: -0.067273	 e_loss: 0.457085	 v_loss: 0.112701	 v_mre: 137.934173	 grad_changes: 0.000266	 time_elapsed: 0.4064
+Episode-45: ep_meanFlowTime: 488.202254	 all_loss: 0.109373	 p_loss: -0.065780	 e_loss: 0.474443	 v_loss: 0.219049	 v_mre: 31.992384	 grad_changes: 0.000719	 time_elapsed: 0.4147
+Episode-46: ep_meanFlowTime: 580.741699	 all_loss: 0.108000	 p_loss: -0.173541	 e_loss: 0.445153	 v_loss: 0.215766	 v_mre: 63.910954	 grad_changes: 0.000101	 time_elapsed: 0.4256
+Episode-47: ep_meanFlowTime: 519.387035	 all_loss: 0.064280	 p_loss: -0.365656	 e_loss: 0.460701	 v_loss: 0.128103	 v_mre: 18.324309	 grad_changes: 0.000322	 time_elapsed: 0.4342
+Episode-48: ep_meanFlowTime: 315.327445	 all_loss: 0.066203	 p_loss: 0.623405	 e_loss: 0.428603	 v_loss: 0.132500	 v_mre: 216.634849	 grad_changes: 0.000097	 time_elapsed: 0.4425
+Episode-49: ep_meanFlowTime: 402.091899	 all_loss: 0.078073	 p_loss: -0.259818	 e_loss: 0.425021	 v_loss: 0.156243	 v_mre: 67.760190	 grad_changes: 0.000131	 time_elapsed: 0.4506
+Episode-50: ep_meanFlowTime: 332.641687	 all_loss: 0.055267	 p_loss: 0.423282	 e_loss: 0.436555	 v_loss: 0.110094	 v_mre: 25.802125	 grad_changes: 0.001601	 time_elapsed: 0.4594
+Episode-51: ep_meanFlowTime: 600.273871	 all_loss: 0.190718	 p_loss: -0.797580	 e_loss: 0.410276	 v_loss: 0.381740	 v_mre: 54.346287	 grad_changes: 0.000280	 time_elapsed: 0.4690
+Episode-52: ep_meanFlowTime: 343.282421	 all_loss: 0.047329	 p_loss: 0.324742	 e_loss: 0.410051	 v_loss: 0.094765	 v_mre: 25.179017	 grad_changes: 0.000080	 time_elapsed: 0.4781
+Episode-53: ep_meanFlowTime: 272.291419	 all_loss: 0.039107	 p_loss: 0.238678	 e_loss: 0.468965	 v_loss: 0.078089	 v_mre: 35.022029	 grad_changes: 0.000266	 time_elapsed: 0.4858
+Episode-54: ep_meanFlowTime: 357.928551	 all_loss: 0.041986	 p_loss: -0.187274	 e_loss: 0.432135	 v_loss: 0.083972	 v_mre: 23.260363	 grad_changes: 0.000000	 time_elapsed: 0.4941
+Episode-55: ep_meanFlowTime: 510.773743	 all_loss: 0.124772	 p_loss: -0.483584	 e_loss: 0.453973	 v_loss: 0.249316	 v_mre: 26.101007	 grad_changes: 0.000051	 time_elapsed: 0.5024
+Episode-56: ep_meanFlowTime: 510.950229	 all_loss: 0.122472	 p_loss: -0.022447	 e_loss: 0.459149	 v_loss: 0.244564	 v_mre: 25.183923	 grad_changes: 0.000294	 time_elapsed: 0.5109
+Episode-57: ep_meanFlowTime: 495.300290	 all_loss: 0.334278	 p_loss: -0.014396	 e_loss: 0.361822	 v_loss: 0.669266	 v_mre: 53.719045	 grad_changes: 0.000972	 time_elapsed: 0.5211
+Episode-58: ep_meanFlowTime: 224.961578	 all_loss: 0.055013	 p_loss: 0.527603	 e_loss: 0.446790	 v_loss: 0.109424	 v_mre: 96.252475	 grad_changes: 0.000450	 time_elapsed: 0.5292
+Episode-59: ep_meanFlowTime: 515.066974	 all_loss: 0.131164	 p_loss: -0.549881	 e_loss: 0.472917	 v_loss: 0.262329	 v_mre: 24.231006	 grad_changes: 0.000000	 time_elapsed: 0.5386
+Episode-60: ep_meanFlowTime: 344.754753	 all_loss: 0.047059	 p_loss: 0.128949	 e_loss: 0.419478	 v_loss: 0.094390	 v_mre: 22.210009	 grad_changes: 0.000352	 time_elapsed: 0.5475
+Vlidation at update-60: mean_flowtime_deterministic: 423.939915+/-69.425129	 mean_Entropy: 0.509026+/-0.069272	 record: 412.564302	 time_elapsed: 0.5573
+[ckpt] saved runs/20260517_gphh_teacher_pipeline/checkpoints/state_latest.pth at i_update=59
+[ckpt] saved runs/20260517_gphh_teacher_pipeline/checkpoints/state_60.pth at i_update=59
+Episode-61: ep_meanFlowTime: 478.316353	 all_loss: 0.062208	 p_loss: -0.212323	 e_loss: 0.369165	 v_loss: 0.124817	 v_mre: 19.047953	 grad_changes: 0.000611	 time_elapsed: 0.5678
+Episode-62: ep_meanFlowTime: 465.011869	 all_loss: 0.078760	 p_loss: -0.154644	 e_loss: 0.445345	 v_loss: 0.157521	 v_mre: 183.241328	 grad_changes: 0.000000	 time_elapsed: 0.5755
+Episode-63: ep_meanFlowTime: 389.631614	 all_loss: 0.056768	 p_loss: 0.080114	 e_loss: 0.446316	 v_loss: 0.113068	 v_mre: 20.696006	 grad_changes: 0.000656	 time_elapsed: 0.5833
+Episode-64: ep_meanFlowTime: 391.339490	 all_loss: 0.064801	 p_loss: -0.064246	 e_loss: 0.464460	 v_loss: 0.129024	 v_mre: 24.798153	 grad_changes: 0.001290	 time_elapsed: 0.5919
+Episode-65: ep_meanFlowTime: 425.347116	 all_loss: 0.088380	 p_loss: 0.033136	 e_loss: 0.431499	 v_loss: 0.175813	 v_mre: 26.630584	 grad_changes: 0.000316	 time_elapsed: 0.6006
+Episode-66: ep_meanFlowTime: 196.154293	 all_loss: 0.021903	 p_loss: 0.132452	 e_loss: 0.414229	 v_loss: 0.043549	 v_mre: 33.791907	 grad_changes: 0.000347	 time_elapsed: 0.6077
+Episode-67: ep_meanFlowTime: 533.847075	 all_loss: 0.096996	 p_loss: -0.672583	 e_loss: 0.361160	 v_loss: 0.195092	 v_mre: 19.713967	 grad_changes: 0.001026	 time_elapsed: 0.6178
+Episode-68: ep_meanFlowTime: 581.875841	 all_loss: 0.077599	 p_loss: -0.305044	 e_loss: 0.530117	 v_loss: 0.153549	 v_mre: 18.862914	 grad_changes: 0.001667	 time_elapsed: 0.6268
+Episode-69: ep_meanFlowTime: 334.440387	 all_loss: 0.070523	 p_loss: 0.554164	 e_loss: 0.373694	 v_loss: 0.141441	 v_mre: 27.001549	 grad_changes: 0.000305	 time_elapsed: 0.6358
+Episode-70: ep_meanFlowTime: 417.582768	 all_loss: 0.059177	 p_loss: -0.304310	 e_loss: 0.481128	 v_loss: 0.118092	 v_mre: 22.558056	 grad_changes: 0.000802	 time_elapsed: 0.6442
+Episode-71: ep_meanFlowTime: 592.292226	 all_loss: 0.127194	 p_loss: -0.235543	 e_loss: 0.370470	 v_loss: 0.255194	 v_mre: 216.932651	 grad_changes: 0.000722	 time_elapsed: 0.6532
+Episode-72: ep_meanFlowTime: 473.176255	 all_loss: 0.072235	 p_loss: 0.067016	 e_loss: 0.445357	 v_loss: 0.144577	 v_mre: 21.692553	 grad_changes: 0.000025	 time_elapsed: 0.6627
+Episode-73: ep_meanFlowTime: 311.119664	 all_loss: 0.072545	 p_loss: -0.127908	 e_loss: 0.453335	 v_loss: 0.144589	 v_mre: 95.921586	 grad_changes: 0.000513	 time_elapsed: 0.6711
+Episode-74: ep_meanFlowTime: 447.177635	 all_loss: 0.103836	 p_loss: -0.278765	 e_loss: 0.395880	 v_loss: 0.208521	 v_mre: 29.532489	 grad_changes: 0.000519	 time_elapsed: 0.6796
+Episode-75: ep_meanFlowTime: 429.079603	 all_loss: 0.129730	 p_loss: -0.005049	 e_loss: 0.450798	 v_loss: 0.259563	 v_mre: 29.601839	 grad_changes: 0.000167	 time_elapsed: 0.6886
+Episode-76: ep_meanFlowTime: 375.978835	 all_loss: 0.092674	 p_loss: 0.251756	 e_loss: 0.449982	 v_loss: 0.185312	 v_mre: 81.114650	 grad_changes: 0.000653	 time_elapsed: 0.6963
+Episode-77: ep_meanFlowTime: 398.270271	 all_loss: 0.106473	 p_loss: -0.113905	 e_loss: 0.431055	 v_loss: 0.212635	 v_mre: 30.014112	 grad_changes: 0.000982	 time_elapsed: 0.7050
+Episode-78: ep_meanFlowTime: 471.915147	 all_loss: 0.086048	 p_loss: 0.025543	 e_loss: 0.391081	 v_loss: 0.172967	 v_mre: 30.470526	 grad_changes: 0.002483	 time_elapsed: 0.7139
+Episode-79: ep_meanFlowTime: 564.314590	 all_loss: 0.178754	 p_loss: 0.041880	 e_loss: 0.441353	 v_loss: 0.357602	 v_mre: 26.773876	 grad_changes: 0.000119	 time_elapsed: 0.7239
+Episode-80: ep_meanFlowTime: 470.048166	 all_loss: 0.075310	 p_loss: 0.087531	 e_loss: 0.394656	 v_loss: 0.150905	 v_mre: 23.931531	 grad_changes: 0.000387	 time_elapsed: 0.7331
+Vlidation at update-80: mean_flowtime_deterministic: 436.220493+/-70.313489	 mean_Entropy: 0.549599+/-0.064736	 record: 412.564302	 time_elapsed: 0.7431
+[ckpt] saved runs/20260517_gphh_teacher_pipeline/checkpoints/state_latest.pth at i_update=79
+[ckpt] saved runs/20260517_gphh_teacher_pipeline/checkpoints/state_80.pth at i_update=79
+Episode-81: ep_meanFlowTime: 273.092874	 all_loss: 0.069591	 p_loss: 0.222238	 e_loss: 0.465995	 v_loss: 0.138696	 v_mre: 106.356757	 grad_changes: 0.000580	 time_elapsed: 0.7522
+Episode-82: ep_meanFlowTime: 448.351457	 all_loss: 0.091496	 p_loss: -0.208320	 e_loss: 0.438717	 v_loss: 0.182757	 v_mre: 25.601055	 grad_changes: 0.000153	 time_elapsed: 0.7614
+Episode-83: ep_meanFlowTime: 526.654481	 all_loss: 0.101625	 p_loss: -0.273148	 e_loss: 0.391611	 v_loss: 0.203559	 v_mre: 186.358548	 grad_changes: 0.000835	 time_elapsed: 0.7696
+Episode-84: ep_meanFlowTime: 330.690468	 all_loss: 0.075765	 p_loss: 0.442746	 e_loss: 0.485270	 v_loss: 0.151530	 v_mre: 56.563080	 grad_changes: 0.000000	 time_elapsed: 0.7780
+Episode-85: ep_meanFlowTime: 485.943418	 all_loss: 0.083417	 p_loss: -0.501711	 e_loss: 0.468138	 v_loss: 0.165674	 v_mre: 206.799225	 grad_changes: 0.000600	 time_elapsed: 0.7865
+Episode-86: ep_meanFlowTime: 571.000996	 all_loss: 0.076459	 p_loss: -0.126667	 e_loss: 0.401021	 v_loss: 0.153420	 v_mre: 16.838277	 grad_changes: 0.001496	 time_elapsed: 0.7959
+Episode-87: ep_meanFlowTime: 495.332799	 all_loss: 0.128512	 p_loss: -0.199428	 e_loss: 0.437297	 v_loss: 0.257025	 v_mre: 22.731746	 grad_changes: 0.000000	 time_elapsed: 0.8051
+Episode-88: ep_meanFlowTime: 493.142865	 all_loss: 0.077998	 p_loss: 0.005563	 e_loss: 0.441303	 v_loss: 0.155533	 v_mre: 53.998753	 grad_changes: 0.000465	 time_elapsed: 0.8133
+Episode-89: ep_meanFlowTime: 612.755484	 all_loss: 0.097369	 p_loss: -0.303498	 e_loss: 0.403262	 v_loss: 0.194738	 v_mre: 18.125361	 grad_changes: 0.000000	 time_elapsed: 0.8222
+Episode-90: ep_meanFlowTime: 479.586656	 all_loss: 0.077557	 p_loss: 0.144772	 e_loss: 0.425984	 v_loss: 0.155217	 v_mre: 20.081770	 grad_changes: 0.000098	 time_elapsed: 0.8303
+Episode-91: ep_meanFlowTime: 394.104971	 all_loss: 0.080975	 p_loss: 0.211521	 e_loss: 0.437455	 v_loss: 0.161597	 v_mre: 53.045865	 grad_changes: 0.000302	 time_elapsed: 0.8385
+Episode-92: ep_meanFlowTime: 372.989819	 all_loss: 0.067180	 p_loss: 0.380705	 e_loss: 0.359665	 v_loss: 0.135845	 v_mre: 24.914138	 grad_changes: 0.001631	 time_elapsed: 0.8487
+Episode-93: ep_meanFlowTime: 449.607703	 all_loss: 0.117713	 p_loss: -0.751031	 e_loss: 0.492511	 v_loss: 0.234519	 v_mre: 28.851974	 grad_changes: 0.000449	 time_elapsed: 0.8584
+Episode-94: ep_meanFlowTime: 422.430928	 all_loss: 0.077677	 p_loss: 0.150265	 e_loss: 0.447082	 v_loss: 0.155111	 v_mre: 80.072150	 grad_changes: 0.000497	 time_elapsed: 0.8672
+Episode-95: ep_meanFlowTime: 371.646470	 all_loss: 0.054444	 p_loss: 0.081462	 e_loss: 0.473587	 v_loss: 0.108654	 v_mre: 28.424171	 grad_changes: 0.000079	 time_elapsed: 0.8753
+Episode-96: ep_meanFlowTime: 342.546515	 all_loss: 0.023616	 p_loss: 0.148532	 e_loss: 0.381603	 v_loss: 0.048129	 v_mre: 16.868391	 grad_changes: 0.001842	 time_elapsed: 0.8851
+Episode-97: ep_meanFlowTime: 661.531574	 all_loss: 0.245608	 p_loss: -0.644507	 e_loss: 0.367594	 v_loss: 0.491809	 v_mre: 26.962720	 grad_changes: 0.000450	 time_elapsed: 0.8958
+Episode-98: ep_meanFlowTime: 365.579045	 all_loss: 0.073299	 p_loss: 0.164126	 e_loss: 0.478524	 v_loss: 0.145993	 v_mre: 111.970724	 grad_changes: 0.000552	 time_elapsed: 0.9041
+Episode-99: ep_meanFlowTime: 299.913168	 all_loss: 0.041132	 p_loss: -0.015899	 e_loss: 0.453189	 v_loss: 0.081904	 v_mre: 25.133491	 grad_changes: 0.000326	 time_elapsed: 0.9124
+Episode-100: ep_meanFlowTime: 239.225955	 all_loss: 0.016237	 p_loss: 0.264734	 e_loss: 0.397046	 v_loss: 0.032950	 v_mre: 19.665786	 grad_changes: 0.001147	 time_elapsed: 0.9202
+Vlidation at update-100: mean_flowtime_deterministic: 421.732998+/-69.404290	 mean_Entropy: 0.441276+/-0.052578	 record: 412.564302	 time_elapsed: 0.9301
+[ckpt] saved runs/20260517_gphh_teacher_pipeline/checkpoints/state_latest.pth at i_update=99
+[ckpt] saved runs/20260517_gphh_teacher_pipeline/checkpoints/state_100.pth at i_update=99
+Episode-101: ep_meanFlowTime: 381.315625	 all_loss: 0.087219	 p_loss: -0.490834	 e_loss: 0.448260	 v_loss: 0.174198	 v_mre: 59.541599	 grad_changes: 0.000173	 time_elapsed: 0.9389
+Episode-102: ep_meanFlowTime: 387.634476	 all_loss: 0.054197	 p_loss: 0.127682	 e_loss: 0.440536	 v_loss: 0.108537	 v_mre: 22.353509	 grad_changes: 0.000480	 time_elapsed: 0.9475
+Episode-103: ep_meanFlowTime: 258.650498	 all_loss: 0.020368	 p_loss: 0.193644	 e_loss: 0.461323	 v_loss: 0.040495	 v_mre: 19.181623	 grad_changes: 0.000036	 time_elapsed: 0.9555
+Episode-104: ep_meanFlowTime: 399.374914	 all_loss: 0.045544	 p_loss: -0.457812	 e_loss: 0.441694	 v_loss: 0.090628	 v_mre: 19.347161	 grad_changes: 0.000455	 time_elapsed: 0.9639
+Episode-105: ep_meanFlowTime: 483.150735	 all_loss: 0.093896	 p_loss: -0.078522	 e_loss: 0.391336	 v_loss: 0.188337	 v_mre: 20.944638	 grad_changes: 0.001048	 time_elapsed: 0.9738
+Episode-106: ep_meanFlowTime: 351.372454	 all_loss: 0.100538	 p_loss: 0.219800	 e_loss: 0.461192	 v_loss: 0.201077	 v_mre: 54.318896	 grad_changes: 0.000000	 time_elapsed: 0.9824
+Episode-107: ep_meanFlowTime: 503.983559	 all_loss: 0.090588	 p_loss: -0.108129	 e_loss: 0.423033	 v_loss: 0.181176	 v_mre: 102.961676	 grad_changes: 0.000000	 time_elapsed: 0.9917
+Episode-108: ep_meanFlowTime: 416.277756	 all_loss: 0.073985	 p_loss: -0.031936	 e_loss: 0.458929	 v_loss: 0.147742	 v_mre: 33.635183	 grad_changes: 0.000124	 time_elapsed: 1.0005
+Episode-109: ep_meanFlowTime: 310.136844	 all_loss: 0.058258	 p_loss: 0.125224	 e_loss: 0.417362	 v_loss: 0.116515	 v_mre: 30.941762	 grad_changes: 0.000000	 time_elapsed: 1.0083
+Episode-110: ep_meanFlowTime: 417.231534	 all_loss: 0.051367	 p_loss: -0.175441	 e_loss: 0.432710	 v_loss: 0.102734	 v_mre: 20.841299	 grad_changes: 0.000000	 time_elapsed: 1.0175
+Episode-111: ep_meanFlowTime: 458.534193	 all_loss: 0.084630	 p_loss: -0.145147	 e_loss: 0.417765	 v_loss: 0.169429	 v_mre: 42.126049	 grad_changes: 0.000528	 time_elapsed: 1.0263
+Episode-112: ep_meanFlowTime: 352.450655	 all_loss: 0.048550	 p_loss: 0.138591	 e_loss: 0.480739	 v_loss: 0.096497	 v_mre: 23.936147	 grad_changes: 0.000705	 time_elapsed: 1.0348
+Episode-113: ep_meanFlowTime: 318.778637	 all_loss: 0.075164	 p_loss: 0.060470	 e_loss: 0.469375	 v_loss: 0.149436	 v_mre: 54.537592	 grad_changes: 0.000516	 time_elapsed: 1.0428
+Episode-114: ep_meanFlowTime: 455.478369	 all_loss: 0.112881	 p_loss: -0.625051	 e_loss: 0.448664	 v_loss: 0.225864	 v_mre: 26.316926	 grad_changes: 0.000177	 time_elapsed: 1.0514
+Episode-115: ep_meanFlowTime: 569.362238	 all_loss: 0.096768	 p_loss: -0.123446	 e_loss: 0.418036	 v_loss: 0.193646	 v_mre: 24.876640	 grad_changes: 0.000077	 time_elapsed: 1.0604
+Episode-116: ep_meanFlowTime: 330.642665	 all_loss: 0.091892	 p_loss: 0.602568	 e_loss: 0.378222	 v_loss: 0.184271	 v_mre: 69.105339	 grad_changes: 0.000591	 time_elapsed: 1.0692
+Episode-117: ep_meanFlowTime: 419.974731	 all_loss: 0.072965	 p_loss: -0.249252	 e_loss: 0.452067	 v_loss: 0.145930	 v_mre: 27.784339	 grad_changes: 0.000000	 time_elapsed: 1.0776
+Episode-118: ep_meanFlowTime: 424.131768	 all_loss: 0.080557	 p_loss: -0.067404	 e_loss: 0.485847	 v_loss: 0.160890	 v_mre: 29.091583	 grad_changes: 0.000173	 time_elapsed: 1.0861
+Episode-119: ep_meanFlowTime: 364.399094	 all_loss: 0.031090	 p_loss: -0.046813	 e_loss: 0.424399	 v_loss: 0.062180	 v_mre: 19.741056	 grad_changes: 0.000000	 time_elapsed: 1.0948
+Episode-120: ep_meanFlowTime: 349.506085	 all_loss: 0.070164	 p_loss: 0.081568	 e_loss: 0.432648	 v_loss: 0.140401	 v_mre: 60.924773	 grad_changes: 0.000434	 time_elapsed: 1.1046
+Vlidation at update-120: mean_flowtime_deterministic: 418.011223+/-68.542254	 mean_Entropy: 0.471485+/-0.071420	 record: 412.564302	 time_elapsed: 1.1144
+[ckpt] saved runs/20260517_gphh_teacher_pipeline/checkpoints/state_latest.pth at i_update=119
+[ckpt] saved runs/20260517_gphh_teacher_pipeline/checkpoints/state_120.pth at i_update=119
+Episode-121: ep_meanFlowTime: 442.976012	 all_loss: 0.068552	 p_loss: -0.198437	 e_loss: 0.418061	 v_loss: 0.137302	 v_mre: 213.064716	 grad_changes: 0.000236	 time_elapsed: 1.1241
+Episode-122: ep_meanFlowTime: 324.724256	 all_loss: 0.072772	 p_loss: 0.254862	 e_loss: 0.497080	 v_loss: 0.145317	 v_mre: 44.117743	 grad_changes: 0.000308	 time_elapsed: 1.1326
+Episode-123: ep_meanFlowTime: 438.523303	 all_loss: 0.093484	 p_loss: -0.754885	 e_loss: 0.517289	 v_loss: 0.185711	 v_mre: 26.280649	 grad_changes: 0.001032	 time_elapsed: 1.1422
+Episode-124: ep_meanFlowTime: 341.679277	 all_loss: 0.034119	 p_loss: 0.057989	 e_loss: 0.416687	 v_loss: 0.068448	 v_mre: 25.137347	 grad_changes: 0.000182	 time_elapsed: 1.1496
+Episode-125: ep_meanFlowTime: 332.797589	 all_loss: 0.033477	 p_loss: 0.160545	 e_loss: 0.482770	 v_loss: 0.066696	 v_mre: 20.203142	 grad_changes: 0.000369	 time_elapsed: 1.1575
+Episode-126: ep_meanFlowTime: 332.771629	 all_loss: 0.033064	 p_loss: 0.059085	 e_loss: 0.428926	 v_loss: 0.066113	 v_mre: 21.960536	 grad_changes: 0.000388	 time_elapsed: 1.1659
+Episode-127: ep_meanFlowTime: 417.517882	 all_loss: 0.079143	 p_loss: -0.246384	 e_loss: 0.487355	 v_loss: 0.157365	 v_mre: 25.463696	 grad_changes: 0.000517	 time_elapsed: 1.1748
+Episode-128: ep_meanFlowTime: 529.940385	 all_loss: 0.103741	 p_loss: -0.236442	 e_loss: 0.403503	 v_loss: 0.207880	 v_mre: 22.747346	 grad_changes: 0.000279	 time_elapsed: 1.1847
+Episode-129: ep_meanFlowTime: 406.052608	 all_loss: 0.055784	 p_loss: 0.525308	 e_loss: 0.464957	 v_loss: 0.111440	 v_mre: 20.322301	 grad_changes: 0.000271	 time_elapsed: 1.1933
+Episode-130: ep_meanFlowTime: 392.364467	 all_loss: 0.044998	 p_loss: -0.045760	 e_loss: 0.439450	 v_loss: 0.089996	 v_mre: 71.770800	 grad_changes: 0.000000	 time_elapsed: 1.2020
+Episode-131: ep_meanFlowTime: 409.926539	 all_loss: 0.059855	 p_loss: -0.393201	 e_loss: 0.452542	 v_loss: 0.119341	 v_mre: 23.613538	 grad_changes: 0.000837	 time_elapsed: 1.2105
+Episode-132: ep_meanFlowTime: 503.117548	 all_loss: 0.325848	 p_loss: 0.138779	 e_loss: 0.432891	 v_loss: 0.651552	 v_mre: 37.348492	 grad_changes: 0.000948	 time_elapsed: 1.2221
+Episode-133: ep_meanFlowTime: 365.278939	 all_loss: 0.051760	 p_loss: 0.050856	 e_loss: 0.401238	 v_loss: 0.104384	 v_mre: 179.493796	 grad_changes: 0.001261	 time_elapsed: 1.2312
+Episode-134: ep_meanFlowTime: 369.466210	 all_loss: 0.076759	 p_loss: -0.231856	 e_loss: 0.493825	 v_loss: 0.152031	 v_mre: 29.572270	 grad_changes: 0.000718	 time_elapsed: 1.2396
+Episode-135: ep_meanFlowTime: 489.317370	 all_loss: 0.077061	 p_loss: -0.250597	 e_loss: 0.367122	 v_loss: 0.154802	 v_mre: 24.143158	 grad_changes: 0.000990	 time_elapsed: 1.2483
+Episode-136: ep_meanFlowTime: 278.960100	 all_loss: 0.070926	 p_loss: 0.274200	 e_loss: 0.500060	 v_loss: 0.141405	 v_mre: 35.012542	 grad_changes: 0.000550	 time_elapsed: 1.2566
+Episode-137: ep_meanFlowTime: 360.808640	 all_loss: 0.076046	 p_loss: -0.152779	 e_loss: 0.443586	 v_loss: 0.152201	 v_mre: 73.245523	 grad_changes: 0.000070	 time_elapsed: 1.2652
+Episode-138: ep_meanFlowTime: 369.199113	 all_loss: 0.040922	 p_loss: -0.065544	 e_loss: 0.482779	 v_loss: 0.081364	 v_mre: 36.455947	 grad_changes: 0.000191	 time_elapsed: 1.2734
+Episode-139: ep_meanFlowTime: 377.892538	 all_loss: 0.050457	 p_loss: 0.192610	 e_loss: 0.447469	 v_loss: 0.100683	 v_mre: 21.890729	 grad_changes: 0.000156	 time_elapsed: 1.2819
+Episode-140: ep_meanFlowTime: 318.083234	 all_loss: 0.044789	 p_loss: 0.118461	 e_loss: 0.423177	 v_loss: 0.089808	 v_mre: 68.832741	 grad_changes: 0.001454	 time_elapsed: 1.2907
+Vlidation at update-140: mean_flowtime_deterministic: 443.537628+/-69.585575	 mean_Entropy: 0.381980+/-0.071901	 record: 412.564302	 time_elapsed: 1.3007
+[ckpt] saved runs/20260517_gphh_teacher_pipeline/checkpoints/state_latest.pth at i_update=139
+[ckpt] saved runs/20260517_gphh_teacher_pipeline/checkpoints/state_140.pth at i_update=139
+Episode-141: ep_meanFlowTime: 275.603197	 all_loss: 0.031059	 p_loss: -0.333690	 e_loss: 0.403071	 v_loss: 0.062223	 v_mre: 29.023926	 grad_changes: 0.000066	 time_elapsed: 1.3091
+Episode-142: ep_meanFlowTime: 461.925775	 all_loss: 0.077677	 p_loss: -0.312605	 e_loss: 0.381921	 v_loss: 0.155956	 v_mre: 24.329672	 grad_changes: 0.000775	 time_elapsed: 1.3185
+Episode-143: ep_meanFlowTime: 464.341097	 all_loss: 0.052536	 p_loss: 0.017313	 e_loss: 0.448709	 v_loss: 0.105072	 v_mre: 17.337761	 grad_changes: 0.000000	 time_elapsed: 1.3280
+Episode-144: ep_meanFlowTime: 377.832390	 all_loss: 0.034378	 p_loss: 0.220063	 e_loss: 0.449234	 v_loss: 0.068757	 v_mre: 80.752840	 grad_changes: 0.000000	 time_elapsed: 1.3376
+Episode-145: ep_meanFlowTime: 226.906566	 all_loss: 0.047943	 p_loss: 0.196343	 e_loss: 0.487633	 v_loss: 0.094099	 v_mre: 68.505515	 grad_changes: 0.001266	 time_elapsed: 1.3462
+Episode-146: ep_meanFlowTime: 425.395530	 all_loss: 0.053393	 p_loss: -0.256234	 e_loss: 0.470710	 v_loss: 0.105584	 v_mre: 19.581116	 grad_changes: 0.005724	 time_elapsed: 1.3557
+Episode-147: ep_meanFlowTime: 427.109276	 all_loss: 0.060979	 p_loss: -0.101588	 e_loss: 0.466787	 v_loss: 0.121958	 v_mre: 35.209114	 grad_changes: 0.000000	 time_elapsed: 1.3635
+Episode-148: ep_meanFlowTime: 397.269271	 all_loss: 0.050196	 p_loss: 0.245840	 e_loss: 0.390962	 v_loss: 0.100601	 v_mre: 20.510581	 grad_changes: 0.000852	 time_elapsed: 1.3720
+Episode-149: ep_meanFlowTime: 280.845458	 all_loss: 0.035282	 p_loss: 0.318262	 e_loss: 0.452503	 v_loss: 0.070565	 v_mre: 36.147460	 grad_changes: 0.000000	 time_elapsed: 1.3803
+Episode-150: ep_meanFlowTime: 328.161557	 all_loss: 0.047910	 p_loss: -0.249723	 e_loss: 0.464792	 v_loss: 0.095113	 v_mre: 49.580177	 grad_changes: 0.000317	 time_elapsed: 1.3884
+Episode-151: ep_meanFlowTime: 485.334054	 all_loss: 0.116773	 p_loss: -0.312706	 e_loss: 0.369831	 v_loss: 0.234130	 v_mre: 25.006540	 grad_changes: 0.001699	 time_elapsed: 1.3978
+Episode-152: ep_meanFlowTime: 588.595869	 all_loss: 0.115291	 p_loss: -0.025873	 e_loss: 0.402841	 v_loss: 0.230799	 v_mre: 24.309034	 grad_changes: 0.000575	 time_elapsed: 1.4069
+Episode-153: ep_meanFlowTime: 517.529459	 all_loss: 0.063766	 p_loss: -0.080180	 e_loss: 0.490041	 v_loss: 0.127304	 v_mre: 22.285806	 grad_changes: 0.000324	 time_elapsed: 1.4155
+Episode-154: ep_meanFlowTime: 561.095097	 all_loss: 0.064963	 p_loss: -0.047703	 e_loss: 0.406252	 v_loss: 0.129927	 v_mre: 16.625002	 grad_changes: 0.000000	 time_elapsed: 1.4251
+Episode-155: ep_meanFlowTime: 441.849882	 all_loss: 0.061867	 p_loss: 0.140342	 e_loss: 0.446381	 v_loss: 0.123496	 v_mre: 23.663646	 grad_changes: 0.000353	 time_elapsed: 1.4342
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 10 leaked semlock objects to clean up at shutdown
+  warnings.warn(
+/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/backend/resource_tracker.py:359: UserWarning: resource_tracker: There appear to be 166 leaked folder objects to clean up at shutdown
+  warnings.warn(

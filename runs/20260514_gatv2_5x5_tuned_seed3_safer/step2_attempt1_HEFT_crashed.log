@@ -1,0 +1,49 @@
+Fatal Python error: Segmentation fault
+
+Current thread 0x00007187cd534740 (most recent call first):
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 2764 in inferred_type
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 6445 in _should_compare
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3897 in get_indexer
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 4429 in reindex
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 6208 in _get_indexer_strict
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py", line 1559 in _get_listlike_indexer
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py", line 1523 in _convert_to_indexer
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py", line 990 in <listcomp>
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py", line 990 in _convert_tuple
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py", line 775 in _get_setitem_indexer
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/indexing.py", line 908 in __setitem__
+  File "/home/xue/GOODRL/env/workflow_scheduling_v3/lib/cloud_env_maxPktNum.py", line 323 in step
+  File "/home/xue/GOODRL/env/workflow_scheduling_v3/simulator_wf.py", line 68 in stepGP
+  File "/home/xue/GOODRL/step2.py", line 120 in validation_H
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 607 in <listcomp>
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 607 in __call__
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/process_executor.py", line 291 in __call__
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/process_executor.py", line 490 in _process_worker
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/multiprocessing/process.py", line 108 in run
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/multiprocessing/process.py", line 314 in _bootstrap
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/backend/popen_loky_posix.py", line 180 in <module>
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/runpy.py", line 86 in _run_code
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/runpy.py", line 196 in _run_module_as_main
+
+Extension modules: psutil._psutil_linux, numpy._core._multiarray_umath, numpy.linalg._umath_linalg, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, numpy.random._sfc64, numpy.random._generator, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, pandas._libs.tslibs.ccalendar, pandas._libs.tslibs.np_datetime, pandas._libs.tslibs.dtypes, pandas._libs.tslibs.base, pandas._libs.tslibs.nattype, pandas._libs.tslibs.timezones, pandas._libs.tslibs.fields, pandas._libs.tslibs.timedeltas, pandas._libs.tslibs.tzconversion, pandas._libs.tslibs.timestamps, pandas._libs.properties, pandas._libs.tslibs.offsets, pandas._libs.tslibs.strptime, pandas._libs.tslibs.parsing, pandas._libs.tslibs.conversion, pandas._libs.tslibs.period, pandas._libs.tslibs.vectorized, pandas._libs.ops_dispatch, pandas._libs.missing, pandas._libs.hashtable, pandas._libs.algos, pandas._libs.interval, pandas._libs.lib, pandas._libs.ops, pandas._libs.hashing, pandas._libs.arrays, pandas._libs.tslib, pandas._libs.sparse, pandas._libs.internals, pandas._libs.indexing, pandas._libs.index, pandas._libs.writers, pandas._libs.join, pandas._libs.window.aggregations, pandas._libs.window.indexers, pandas._libs.reshape, pandas._libs.groupby, pandas._libs.json, pandas._libs.parsers, pandas._libs.testing (total: 63)
+Traceback (most recent call last):
+  File "/home/xue/GOODRL/step2.py", line 245, in <module>
+    main()
+  File "/home/xue/GOODRL/step2.py", line 160, in main
+    meanFlowTimes = Parallel(n_jobs=-1)(delayed(validation_H)( t, configs ) for t in range(configs.valid_num)) 
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+joblib.externals.loky.process_executor.TerminatedWorkerError: A worker process managed by the executor was unexpectedly terminated. This could be caused by a segmentation fault while calling the function or by an excessive memory usage causing the Operating System to kill the worker.
+
+The exit codes of the workers are {SIGSEGV(-11)}
+Detailed tracebacks of the workers should have been printed to stderr in the executor process if faulthandler was not disabled.

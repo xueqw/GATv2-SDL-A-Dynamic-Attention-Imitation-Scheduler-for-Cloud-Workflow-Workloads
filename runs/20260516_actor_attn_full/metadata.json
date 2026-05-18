@@ -1,0 +1,14 @@
+{
+  "run_id": "20260516_actor_attn_full",
+  "description": "Full pipeline (step1 + step2) with actor self-attention (--actor_atten_layers=1). Probe for whether attention in actor helps before committing to Pointer attention.",
+  "architecture": "GATv2 + Actor SelfAttention",
+  "non_default_flags": {
+    "actor_atten_layers": 1,
+    "lr_a": 0.0001, "lr_c": 0.001,
+    "warmup_critic": 500, "max_updates": 1000,
+    "grad_control": 0, "algo_seed": 3, "entloss_coef": 0.01
+  },
+  "step1_actor": "/home/xue/GOODRL/runs/20260516_actor_attn_full/step1_actor.pth",
+  "step2_parallel_mode": "all 4 Parallel calls active (HEFT val, update-0 val, rollout, per-20 val)",
+  "started_at": "2026-05-16T13:44:25+08:00"
+}

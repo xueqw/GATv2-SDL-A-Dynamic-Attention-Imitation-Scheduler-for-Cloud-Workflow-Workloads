@@ -1,0 +1,7 @@
+Vlidation at HEFT: mean_flowtime_deterministic: 521.875939+/-75.079270	 time_elapsed: 0.088241
+Vlidation at update-0: mean_flowtime_deterministic: 421.007858+/-68.341115	 mean_Entropy: 1.293121+/-0.046705	 record: 421.007858	 time_elapsed: 0.201149
+Episode-1: ep_meanFlowTime: 526.442904	 all_loss: 0.388500	 p_loss: -1.789371	 e_loss: 1.039778	 v_loss: 0.775189	 v_mre: 42.618304	 grad_changes: 0.000274	 time_elapsed: 0.2233
+Episode-2: ep_meanFlowTime: 376.796258	 all_loss: 0.097228	 p_loss: 0.367138	 e_loss: 1.046020	 v_loss: 0.194456	 v_mre: 39.660610	 grad_changes: 0.000000	 time_elapsed: 0.2441
+Episode-3: ep_meanFlowTime: 387.126449	 all_loss: 0.162078	 p_loss: -0.050749	 e_loss: 1.039179	 v_loss: 0.323696	 v_mre: 121.318775	 grad_changes: 0.000044	 time_elapsed: 0.2638
+Episode-4: ep_meanFlowTime: 439.206885	 all_loss: 0.118203	 p_loss: -0.423315	 e_loss: 1.005056	 v_loss: 0.235939	 v_mre: 31.948541	 grad_changes: 0.000047	 time_elapsed: 0.2829
+Episode-5: ep_meanFlowTime: 418.036024	 all_loss: 0.069075	 p_loss: -0.044634	 e_loss: 0.983985	 v_loss: 0.138150	 v_mre: 22.188609	 grad_changes: 0.000000	 time_elapsed: 0.3023

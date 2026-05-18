@@ -1,0 +1,11 @@
+==================================================
+Watchdog start: Mon May 18 07:18:44 PM CST 2026
+Run dir: runs/20260518_gphh_kl_ramp_seed5
+Args: --vm_types 5 --each_vm_type_num 5 --arr_rate 5.4 --lr_a 0.0001 --lr_c 0.001 --warmup_critic 120 --max_updates 1000 --grad_control 0 --algo_seed 5 --entloss_coef 0.01 --entropy_control 1 --entropy_min 0.3 --entropy_max 0.6 --beta_kl 0.05 --beta_kl_after 0.02 --ppo_start_coef 0.05 --ppo_max_coef 0.3 --ppo_ramp_updates 200 --teacher gphh --actor_pointer 0 --actor_atten_layers 0 --checkpoint_interval 20
+==================================================
+[Mon May 18 07:18:44 PM CST 2026] === Attempt 1: starting fresh ===
+Vlidation at HEFT: mean_flowtime_deterministic: 521.875939+/-75.079270	 time_elapsed: 0.011091
+[kl-anchor] ref_actor created, beta_kl=0.05
+Vlidation at update-0: mean_flowtime_deterministic: 412.564302+/-68.874040	 mean_Entropy: 0.508033+/-0.074831	 record: 412.564302	 time_elapsed: 0.025794
+Episode-1: ep_meanFlowTime: 506.073000	 all_loss: 0.220381	 p_loss: -1.610812	 e_loss: 0.519374	 v_loss: 0.423910	 v_mre: 34.794829	 grad_changes: 0.098866	 time_elapsed: 0.1913
+Episode-2: ep_meanFlowTime: 359.862863	 all_loss: 0.093455	 p_loss: 0.283955	 e_loss: 0.534878	 v_loss: 0.183232	 v_mre: 38.575408	 grad_changes: 0.008702	 time_elapsed: 0.3520

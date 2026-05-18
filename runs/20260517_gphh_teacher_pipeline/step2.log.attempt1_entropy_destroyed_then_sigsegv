@@ -1,0 +1,139 @@
+==================================================
+Watchdog start: Sun May 17 08:16:30 PM CST 2026
+Run dir: /home/xue/GOODRL/runs/20260517_gphh_teacher_pipeline
+Args: --vm_types 5 --each_vm_type_num 5 --arr_rate 5.4 --lr_a 0.0001 --lr_c 0.001 --warmup_critic 500 --max_updates 1000 --grad_control 0 --algo_seed 3 --entloss_coef 0.01 --teacher gphh --actor_pointer 0 --actor_atten_layers 0 --checkpoint_interval 50
+==================================================
+[Sun May 17 08:16:30 PM CST 2026] === Attempt 1: starting fresh ===
+Vlidation at HEFT: mean_flowtime_deterministic: 521.875939+/-75.079270	 time_elapsed: 0.006686
+Vlidation at update-0: mean_flowtime_deterministic: 412.564302+/-68.874040	 mean_Entropy: 0.507925+/-0.074834	 record: 412.564302	 time_elapsed: 0.015834
+Episode-1: ep_meanFlowTime: 511.241518	 all_loss: 0.396975	 p_loss: -1.717487	 e_loss: 0.488172	 v_loss: 0.803245	 v_mre: 45.910638	 grad_changes: 0.007092	 time_elapsed: 0.0264
+Episode-2: ep_meanFlowTime: 370.278772	 all_loss: 0.097496	 p_loss: 0.501141	 e_loss: 0.540780	 v_loss: 0.203281	 v_mre: 41.310673	 grad_changes: 0.004105	 time_elapsed: 0.0354
+Episode-3: ep_meanFlowTime: 381.047697	 all_loss: 0.125172	 p_loss: -0.084210	 e_loss: 0.536454	 v_loss: 0.258908	 v_mre: 114.441817	 grad_changes: 0.004280	 time_elapsed: 0.0443
+Episode-4: ep_meanFlowTime: 436.065817	 all_loss: 0.112070	 p_loss: -0.340745	 e_loss: 0.599253	 v_loss: 0.229690	 v_mre: 32.246932	 grad_changes: 0.003074	 time_elapsed: 0.0518
+Episode-5: ep_meanFlowTime: 415.319644	 all_loss: 0.058986	 p_loss: -0.012443	 e_loss: 0.624598	 v_loss: 0.122344	 v_mre: 20.552659	 grad_changes: 0.001620	 time_elapsed: 0.0595
+Episode-6: ep_meanFlowTime: 414.073544	 all_loss: 0.104968	 p_loss: 0.141098	 e_loss: 0.645588	 v_loss: 0.213304	 v_mre: 70.589487	 grad_changes: 0.002257	 time_elapsed: 0.0681
+Episode-7: ep_meanFlowTime: 224.247864	 all_loss: 0.031996	 p_loss: 0.250043	 e_loss: 0.661231	 v_loss: 0.066506	 v_mre: 32.791386	 grad_changes: 0.002868	 time_elapsed: 0.0751
+Episode-8: ep_meanFlowTime: 466.483497	 all_loss: 0.136738	 p_loss: -0.600191	 e_loss: 0.547610	 v_loss: 0.281333	 v_mre: 192.276412	 grad_changes: 0.011711	 time_elapsed: 0.0843
+Episode-9: ep_meanFlowTime: 239.017905	 all_loss: 0.046029	 p_loss: 0.475585	 e_loss: 0.664132	 v_loss: 0.094136	 v_mre: 41.598487	 grad_changes: 0.000816	 time_elapsed: 0.0919
+Episode-10: ep_meanFlowTime: 343.568031	 all_loss: 0.089279	 p_loss: -0.317755	 e_loss: 0.469125	 v_loss: 0.187710	 v_mre: 43.496248	 grad_changes: 0.008872	 time_elapsed: 0.1016
+Episode-11: ep_meanFlowTime: 620.700629	 all_loss: 0.151465	 p_loss: -0.718049	 e_loss: 0.509033	 v_loss: 0.312415	 v_mre: 22.201602	 grad_changes: 0.010552	 time_elapsed: 0.1130
+Episode-12: ep_meanFlowTime: 345.876238	 all_loss: 0.066094	 p_loss: 0.595516	 e_loss: 0.587179	 v_loss: 0.138511	 v_mre: 31.451836	 grad_changes: 0.002260	 time_elapsed: 0.1218
+Episode-13: ep_meanFlowTime: 448.375152	 all_loss: 0.108444	 p_loss: -0.186914	 e_loss: 0.518486	 v_loss: 0.225602	 v_mre: 41.888240	 grad_changes: 0.005483	 time_elapsed: 0.1315
+Episode-14: ep_meanFlowTime: 381.983486	 all_loss: 0.054984	 p_loss: 0.198161	 e_loss: 0.674199	 v_loss: 0.111573	 v_mre: 25.460431	 grad_changes: 0.000832	 time_elapsed: 0.1395
+Episode-15: ep_meanFlowTime: 433.332283	 all_loss: 0.051657	 p_loss: -0.238442	 e_loss: 0.596183	 v_loss: 0.108762	 v_mre: 22.004714	 grad_changes: 0.002764	 time_elapsed: 0.1476
+Episode-16: ep_meanFlowTime: 306.321467	 all_loss: 0.047388	 p_loss: 0.290320	 e_loss: 0.654234	 v_loss: 0.097039	 v_mre: 34.354984	 grad_changes: 0.001234	 time_elapsed: 0.1556
+Episode-17: ep_meanFlowTime: 475.773626	 all_loss: 0.060461	 p_loss: -0.377722	 e_loss: 0.646170	 v_loss: 0.123157	 v_mre: 22.716060	 grad_changes: 0.003729	 time_elapsed: 0.1640
+Episode-18: ep_meanFlowTime: 550.815428	 all_loss: 0.073683	 p_loss: 0.008521	 e_loss: 0.610320	 v_loss: 0.152521	 v_mre: 15.827327	 grad_changes: 0.004117	 time_elapsed: 0.1736
+Episode-19: ep_meanFlowTime: 473.267587	 all_loss: 0.106876	 p_loss: -0.044553	 e_loss: 0.647942	 v_loss: 0.217472	 v_mre: 32.152102	 grad_changes: 0.003262	 time_elapsed: 0.1828
+Episode-20: ep_meanFlowTime: 459.170346	 all_loss: 0.163774	 p_loss: -0.433946	 e_loss: 0.713383	 v_loss: 0.328425	 v_mre: 51.663175	 grad_changes: 0.000806	 time_elapsed: 0.1909
+Vlidation at update-20: mean_flowtime_deterministic: 465.939523+/-87.226996	 mean_Entropy: 0.683535+/-0.075278	 record: 412.564302	 time_elapsed: 0.2008
+Episode-21: ep_meanFlowTime: 513.019369	 all_loss: 0.119472	 p_loss: -0.034158	 e_loss: 0.742912	 v_loss: 0.239371	 v_mre: 33.012002	 grad_changes: 0.000083	 time_elapsed: 0.2094
+Episode-22: ep_meanFlowTime: 500.945445	 all_loss: 0.106611	 p_loss: 0.158755	 e_loss: 0.652958	 v_loss: 0.215797	 v_mre: 25.679255	 grad_changes: 0.001690	 time_elapsed: 0.2186
+Episode-23: ep_meanFlowTime: 474.274295	 all_loss: 0.079248	 p_loss: 0.183956	 e_loss: 0.676800	 v_loss: 0.160611	 v_mre: 21.521972	 grad_changes: 0.001744	 time_elapsed: 0.2277
+Episode-24: ep_meanFlowTime: 654.186747	 all_loss: 0.173591	 p_loss: -0.105004	 e_loss: 0.627674	 v_loss: 0.351157	 v_mre: 25.904362	 grad_changes: 0.002754	 time_elapsed: 0.2376
+Episode-25: ep_meanFlowTime: 510.636030	 all_loss: 0.112824	 p_loss: -0.066311	 e_loss: 0.709862	 v_loss: 0.226879	 v_mre: 28.926260	 grad_changes: 0.001033	 time_elapsed: 0.2459
+Episode-26: ep_meanFlowTime: 424.025335	 all_loss: 0.114343	 p_loss: 0.324119	 e_loss: 0.610450	 v_loss: 0.232739	 v_mre: 254.051477	 grad_changes: 0.001997	 time_elapsed: 0.2553
+Episode-27: ep_meanFlowTime: 520.975026	 all_loss: 0.213229	 p_loss: -0.536984	 e_loss: 0.730071	 v_loss: 0.427040	 v_mre: 40.324104	 grad_changes: 0.002178	 time_elapsed: 0.2640
+Episode-28: ep_meanFlowTime: 576.392306	 all_loss: 0.285350	 p_loss: 0.054185	 e_loss: 0.696620	 v_loss: 0.571334	 v_mre: 119.332443	 grad_changes: 0.000402	 time_elapsed: 0.2723
+Episode-29: ep_meanFlowTime: 521.104839	 all_loss: 0.149542	 p_loss: 0.303351	 e_loss: 0.704142	 v_loss: 0.299860	 v_mre: 33.413747	 grad_changes: 0.000966	 time_elapsed: 0.2809
+Episode-30: ep_meanFlowTime: 657.888654	 all_loss: 0.228108	 p_loss: -0.472319	 e_loss: 0.740036	 v_loss: 0.456438	 v_mre: 21.454786	 grad_changes: 0.000201	 time_elapsed: 0.2898
+Episode-31: ep_meanFlowTime: 390.753266	 all_loss: 0.102091	 p_loss: 0.322981	 e_loss: 0.669832	 v_loss: 0.205787	 v_mre: 32.391859	 grad_changes: 0.000774	 time_elapsed: 0.2980
+Episode-32: ep_meanFlowTime: 324.706436	 all_loss: 0.051418	 p_loss: 0.180848	 e_loss: 0.671518	 v_loss: 0.104070	 v_mre: 38.234878	 grad_changes: 0.001096	 time_elapsed: 0.3059
+Episode-33: ep_meanFlowTime: 415.460212	 all_loss: 0.110051	 p_loss: -0.449970	 e_loss: 0.780958	 v_loss: 0.220327	 v_mre: 29.625433	 grad_changes: 0.000132	 time_elapsed: 0.3134
+Episode-34: ep_meanFlowTime: 370.612438	 all_loss: 0.083637	 p_loss: 0.213234	 e_loss: 0.707315	 v_loss: 0.167890	 v_mre: 193.595706	 grad_changes: 0.000773	 time_elapsed: 0.3209
+Episode-35: ep_meanFlowTime: 417.262921	 all_loss: 0.098389	 p_loss: 0.323919	 e_loss: 0.677002	 v_loss: 0.198246	 v_mre: 185.496044	 grad_changes: 0.000783	 time_elapsed: 0.3296
+Episode-36: ep_meanFlowTime: 455.823386	 all_loss: 0.084225	 p_loss: -0.145867	 e_loss: 0.700844	 v_loss: 0.169314	 v_mre: 69.499992	 grad_changes: 0.000465	 time_elapsed: 0.3378
+Episode-37: ep_meanFlowTime: 409.522823	 all_loss: 0.131321	 p_loss: 0.004671	 e_loss: 0.723763	 v_loss: 0.262846	 v_mre: 31.826983	 grad_changes: 0.000237	 time_elapsed: 0.3460
+Episode-38: ep_meanFlowTime: 525.778858	 all_loss: 0.190022	 p_loss: -0.211643	 e_loss: 0.724243	 v_loss: 0.380473	 v_mre: 41.059401	 grad_changes: 0.000108	 time_elapsed: 0.3541
+Episode-39: ep_meanFlowTime: 561.358239	 all_loss: 0.176302	 p_loss: 0.068035	 e_loss: 0.605831	 v_loss: 0.357490	 v_mre: 113.651558	 grad_changes: 0.004306	 time_elapsed: 0.3640
+Episode-40: ep_meanFlowTime: 783.056275	 all_loss: 0.212562	 p_loss: -0.980536	 e_loss: 0.860690	 v_loss: 0.425124	 v_mre: 21.224796	 grad_changes: 0.000000	 time_elapsed: 0.3728
+Vlidation at update-40: mean_flowtime_deterministic: 535.386077+/-101.152561	 mean_Entropy: 0.733042+/-0.082505	 record: 412.564302	 time_elapsed: 0.3828
+Episode-41: ep_meanFlowTime: 451.147687	 all_loss: 0.081056	 p_loss: 0.435110	 e_loss: 0.756103	 v_loss: 0.162112	 v_mre: 22.788637	 grad_changes: 0.000000	 time_elapsed: 0.3916
+Episode-42: ep_meanFlowTime: 367.213131	 all_loss: 0.078890	 p_loss: 0.300456	 e_loss: 0.645660	 v_loss: 0.160872	 v_mre: 75.200234	 grad_changes: 0.002478	 time_elapsed: 0.4005
+Episode-43: ep_meanFlowTime: 463.050561	 all_loss: 0.158484	 p_loss: -0.376533	 e_loss: 0.850974	 v_loss: 0.316967	 v_mre: 110.837590	 grad_changes: 0.000000	 time_elapsed: 0.4082
+Episode-44: ep_meanFlowTime: 591.444452	 all_loss: 0.102360	 p_loss: -0.081647	 e_loss: 0.798297	 v_loss: 0.204719	 v_mre: 35.476049	 grad_changes: 0.000000	 time_elapsed: 0.4163
+Episode-45: ep_meanFlowTime: 616.156228	 all_loss: 0.184634	 p_loss: -0.297429	 e_loss: 0.706136	 v_loss: 0.370115	 v_mre: 27.829637	 grad_changes: 0.000402	 time_elapsed: 0.4250
+Episode-46: ep_meanFlowTime: 689.147257	 all_loss: 0.154474	 p_loss: -0.045673	 e_loss: 0.674907	 v_loss: 0.310774	 v_mre: 68.064490	 grad_changes: 0.001323	 time_elapsed: 0.4365
+Episode-47: ep_meanFlowTime: 653.163322	 all_loss: 0.105533	 p_loss: -1.356035	 e_loss: 0.746536	 v_loss: 0.211284	 v_mre: 19.620913	 grad_changes: 0.000090	 time_elapsed: 0.4449
+Episode-48: ep_meanFlowTime: 385.025224	 all_loss: 0.084103	 p_loss: 0.731935	 e_loss: 0.818081	 v_loss: 0.168205	 v_mre: 221.195884	 grad_changes: 0.000000	 time_elapsed: 0.4529
+Episode-49: ep_meanFlowTime: 480.227042	 all_loss: 0.097093	 p_loss: -0.077938	 e_loss: 0.812492	 v_loss: 0.194186	 v_mre: 47.514596	 grad_changes: 0.000000	 time_elapsed: 0.4612
+Episode-50: ep_meanFlowTime: 386.424839	 all_loss: 0.063753	 p_loss: 0.493619	 e_loss: 0.714643	 v_loss: 0.128516	 v_mre: 20.325249	 grad_changes: 0.000884	 time_elapsed: 0.4697
+Episode-51: ep_meanFlowTime: 726.651725	 all_loss: 0.269577	 p_loss: -0.923938	 e_loss: 0.720884	 v_loss: 0.539582	 v_mre: 28.718557	 grad_changes: 0.000320	 time_elapsed: 0.4787
+Episode-52: ep_meanFlowTime: 415.703144	 all_loss: 0.090888	 p_loss: 0.133544	 e_loss: 0.713822	 v_loss: 0.183004	 v_mre: 26.628121	 grad_changes: 0.000499	 time_elapsed: 0.4871
+Episode-53: ep_meanFlowTime: 337.440284	 all_loss: 0.078932	 p_loss: 0.269975	 e_loss: 0.837677	 v_loss: 0.157864	 v_mre: 38.442426	 grad_changes: 0.000000	 time_elapsed: 0.4942
+Episode-54: ep_meanFlowTime: 443.192618	 all_loss: 0.057133	 p_loss: -0.098053	 e_loss: 0.725779	 v_loss: 0.115119	 v_mre: 19.804656	 grad_changes: 0.000500	 time_elapsed: 0.5026
+Episode-55: ep_meanFlowTime: 648.240527	 all_loss: 0.217440	 p_loss: -0.724430	 e_loss: 0.846434	 v_loss: 0.434880	 v_mre: 24.505912	 grad_changes: 0.000000	 time_elapsed: 0.5112
+Episode-56: ep_meanFlowTime: 654.214262	 all_loss: 0.184765	 p_loss: 0.095218	 e_loss: 0.936430	 v_loss: 0.369530	 v_mre: 24.094603	 grad_changes: 0.000000	 time_elapsed: 0.5195
+Episode-57: ep_meanFlowTime: 589.652328	 all_loss: 0.287419	 p_loss: 0.135045	 e_loss: 0.724122	 v_loss: 0.575057	 v_mre: 41.131296	 grad_changes: 0.000072	 time_elapsed: 0.5297
+Episode-58: ep_meanFlowTime: 240.778480	 all_loss: 0.056661	 p_loss: 0.447842	 e_loss: 0.726935	 v_loss: 0.114206	 v_mre: 109.393966	 grad_changes: 0.000490	 time_elapsed: 0.5375
+Episode-59: ep_meanFlowTime: 642.854107	 all_loss: 0.217995	 p_loss: -0.663869	 e_loss: 0.779307	 v_loss: 0.435991	 v_mre: 23.053946	 grad_changes: 0.000000	 time_elapsed: 0.5468
+Episode-60: ep_meanFlowTime: 425.033081	 all_loss: 0.081838	 p_loss: 0.115949	 e_loss: 0.714341	 v_loss: 0.164703	 v_mre: 26.194822	 grad_changes: 0.000428	 time_elapsed: 0.5561
+Vlidation at update-60: mean_flowtime_deterministic: 535.987172+/-90.504917	 mean_Entropy: 0.878779+/-0.089312	 record: 412.564302	 time_elapsed: 0.5661
+Episode-61: ep_meanFlowTime: 565.162488	 all_loss: 0.106372	 p_loss: -0.216992	 e_loss: 0.800596	 v_loss: 0.212744	 v_mre: 21.973049	 grad_changes: 0.000000	 time_elapsed: 0.5771
+Episode-62: ep_meanFlowTime: 585.692805	 all_loss: 0.151225	 p_loss: -0.258052	 e_loss: 0.933586	 v_loss: 0.302450	 v_mre: 140.069752	 grad_changes: 0.000000	 time_elapsed: 0.5852
+Episode-63: ep_meanFlowTime: 503.427683	 all_loss: 0.104173	 p_loss: 0.199347	 e_loss: 0.949995	 v_loss: 0.208345	 v_mre: 24.923475	 grad_changes: 0.000000	 time_elapsed: 0.5933
+Episode-64: ep_meanFlowTime: 514.394901	 all_loss: 0.098102	 p_loss: -0.041908	 e_loss: 0.859161	 v_loss: 0.196205	 v_mre: 22.203635	 grad_changes: 0.000000	 time_elapsed: 0.6017
+Episode-65: ep_meanFlowTime: 483.706533	 all_loss: 0.132085	 p_loss: 0.315619	 e_loss: 0.895518	 v_loss: 0.264170	 v_mre: 29.046949	 grad_changes: 0.000000	 time_elapsed: 0.6101
+Episode-66: ep_meanFlowTime: 207.143069	 all_loss: 0.026007	 p_loss: 0.133583	 e_loss: 0.884524	 v_loss: 0.052014	 v_mre: 33.288984	 grad_changes: 0.000000	 time_elapsed: 0.6171
+Episode-67: ep_meanFlowTime: 646.368627	 all_loss: 0.163369	 p_loss: -0.754541	 e_loss: 0.782514	 v_loss: 0.327152	 v_mre: 21.274116	 grad_changes: 0.000317	 time_elapsed: 0.6270
+Episode-68: ep_meanFlowTime: 778.404820	 all_loss: 0.151149	 p_loss: -0.318385	 e_loss: 0.962570	 v_loss: 0.301848	 v_mre: 18.543540	 grad_changes: 0.000134	 time_elapsed: 0.6360
+Episode-69: ep_meanFlowTime: 454.610195	 all_loss: 0.142457	 p_loss: 0.574668	 e_loss: 0.760202	 v_loss: 0.285130	 v_mre: 27.428352	 grad_changes: 0.000168	 time_elapsed: 0.6454
+Episode-70: ep_meanFlowTime: 593.945445	 all_loss: 0.161283	 p_loss: -0.442464	 e_loss: 0.890609	 v_loss: 0.322566	 v_mre: 25.537656	 grad_changes: 0.000000	 time_elapsed: 0.6535
+Episode-71: ep_meanFlowTime: 799.625729	 all_loss: 0.284837	 p_loss: -0.221423	 e_loss: 0.801774	 v_loss: 0.569674	 v_mre: 127.089867	 grad_changes: 0.000000	 time_elapsed: 0.6635
+Episode-72: ep_meanFlowTime: 618.390225	 all_loss: 0.141355	 p_loss: 0.259566	 e_loss: 0.811656	 v_loss: 0.282928	 v_mre: 27.751216	 grad_changes: 0.000061	 time_elapsed: 0.6733
+Episode-73: ep_meanFlowTime: 421.031794	 all_loss: 0.136442	 p_loss: 0.059258	 e_loss: 0.918788	 v_loss: 0.272884	 v_mre: 66.003278	 grad_changes: 0.000000	 time_elapsed: 0.6815
+Episode-74: ep_meanFlowTime: 599.519519	 all_loss: 0.113824	 p_loss: -0.107221	 e_loss: 0.829937	 v_loss: 0.227648	 v_mre: 24.675144	 grad_changes: 0.000000	 time_elapsed: 0.6901
+Episode-75: ep_meanFlowTime: 592.393698	 all_loss: 0.225034	 p_loss: -0.110333	 e_loss: 0.800942	 v_loss: 0.450279	 v_mre: 28.094779	 grad_changes: 0.000118	 time_elapsed: 0.6989
+Episode-76: ep_meanFlowTime: 492.216674	 all_loss: 0.148963	 p_loss: 0.672226	 e_loss: 1.046102	 v_loss: 0.297459	 v_mre: 84.246097	 grad_changes: 0.000069	 time_elapsed: 0.7067
+Episode-77: ep_meanFlowTime: 499.904163	 all_loss: 0.198139	 p_loss: -0.152345	 e_loss: 0.963756	 v_loss: 0.395772	 v_mre: 31.265067	 grad_changes: 0.000424	 time_elapsed: 0.7154
+Episode-78: ep_meanFlowTime: 671.607149	 all_loss: 0.204249	 p_loss: -0.066382	 e_loss: 0.786089	 v_loss: 0.408684	 v_mre: 31.466121	 grad_changes: 0.000405	 time_elapsed: 0.7246
+Episode-79: ep_meanFlowTime: 669.687878	 all_loss: 0.216217	 p_loss: 0.360452	 e_loss: 0.793000	 v_loss: 0.433078	 v_mre: 25.462564	 grad_changes: 0.000426	 time_elapsed: 0.7350
+Episode-80: ep_meanFlowTime: 557.376793	 all_loss: 0.054289	 p_loss: -0.022674	 e_loss: 0.810013	 v_loss: 0.108991	 v_mre: 16.916237	 grad_changes: 0.000269	 time_elapsed: 0.7447
+Fatal Python error: Segmentation fault
+
+Current thread 0x00007cb9c142f740 (most recent call first):
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/construction.py", line 485 in ensure_wrapped_if_datetimelike
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/internals/blocks.py", line 2735 in maybe_coerce_values
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/internals/managers.py", line 1889 in from_array
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/series.py", line 591 in __init__
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/series.py", line 6252 in _construct_result
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/series.py", line 6140 in _cmp_method
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/arraylike.py", line 40 in __eq__
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/pandas/core/ops/common.py", line 76 in new_method
+  File "/home/xue/GOODRL/env/workflow_scheduling_v3/lib/cloud_env_maxPktNum.py", line 561 in state_info_construct1
+  File "/home/xue/GOODRL/env/workflow_scheduling_v3/simulator_wf.py", line 56 in step
+  File "/home/xue/GOODRL/step2.py", line 157 in validation_Org
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 607 in <listcomp>
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 607 in __call__
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/process_executor.py", line 291 in __call__
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/process_executor.py", line 490 in _process_worker
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/multiprocessing/process.py", line 108 in run
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/multiprocessing/process.py", line 314 in _bootstrap
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/externals/loky/backend/popen_loky_posix.py", line 180 in <module>
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/runpy.py", line 86 in _run_code
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/runpy.py", line 196 in _run_module_as_main
+
+Extension modules: psutil._psutil_linux, numpy._core._multiarray_umath, numpy.linalg._umath_linalg, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._mt19937, numpy.random.mtrand, numpy.random._philox, numpy.random._pcg64, numpy.random._sfc64, numpy.random._generator, pandas._libs.tslibs.ccalendar, pandas._libs.tslibs.np_datetime, pandas._libs.tslibs.dtypes, pandas._libs.tslibs.base, pandas._libs.tslibs.nattype, pandas._libs.tslibs.timezones, pandas._libs.tslibs.fields, pandas._libs.tslibs.timedeltas, pandas._libs.tslibs.tzconversion, pandas._libs.tslibs.timestamps, pandas._libs.properties, pandas._libs.tslibs.offsets, pandas._libs.tslibs.strptime, pandas._libs.tslibs.parsing, pandas._libs.tslibs.conversion, pandas._libs.tslibs.period, pandas._libs.tslibs.vectorized, pandas._libs.ops_dispatch, pandas._libs.missing, pandas._libs.hashtable, pandas._libs.algos, pandas._libs.interval, pandas._libs.lib, pandas._libs.ops, pandas._libs.hashing, pandas._libs.arrays, pandas._libs.tslib, pandas._libs.sparse, pandas._libs.internals, pandas._libs.indexing, pandas._libs.index, pandas._libs.writers, pandas._libs.join, pandas._libs.window.aggregations, pandas._libs.window.indexers, pandas._libs.reshape, pandas._libs.groupby, pandas._libs.json, pandas._libs.parsers, pandas._libs.testing, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, xxhash._xxhash, markupsafe._speedups, charset_normalizer.md, charset_normalizer.cd, requests.packages.charset_normalizer.md, requests.packages.chardet.md, requests.packages.charset_normalizer.cd, requests.packages.chardet.cd (total: 71)
+Traceback (most recent call last):
+  File "/home/xue/GOODRL/step2.py", line 311, in <module>
+    main()
+  File "/home/xue/GOODRL/step2.py", line 287, in main
+    valids = Parallel(n_jobs=-1)(delayed(validation_Org)(t, configs, algos.actor, True) for t in range(configs.valid_num))
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 2072, in __call__
+    return output if self.return_generator else list(output)
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 1682, in _get_outputs
+    yield from self._retrieve()
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 1784, in _retrieve
+    self._raise_error_fast()
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 1859, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 758, in get_result
+    return self._return_or_raise()
+  File "/home/xue/anaconda3/envs/drl_sched/lib/python3.10/site-packages/joblib/parallel.py", line 773, in _return_or_raise
+    raise self._result
+joblib.externals.loky.process_executor.TerminatedWorkerError: A worker process managed by the executor was unexpectedly terminated. This could be caused by a segmentation fault while calling the function or by an excessive memory usage causing the Operating System to kill the worker.
+
+The exit codes of the workers are {SIGSEGV(-11)}
+Detailed tracebacks of the workers should have been printed to stderr in the executor process if faulthandler was not disabled.
+[Sun May 17 09:01:22 PM CST 2026] === Attempt 1 ended, exit code: 1 ===
+[Sun May 17 09:01:22 PM CST 2026] No checkpoint written yet (early crash). Likely code bug, not hardware. Aborting watchdog.

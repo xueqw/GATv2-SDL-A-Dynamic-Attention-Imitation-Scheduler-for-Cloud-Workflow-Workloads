@@ -1,0 +1,25 @@
+{
+  "run_id": "20260513_gatv2_5x5_gc1_seed4_baseline",
+  "description": "GATv2 baseline with default --grad_control 1 (BUG: critic does not update). Demonstrates v_mre stuck at 110, v_loss horizontally bouncing 2.5-3.",
+  "started_at": "2026-05-13 13:23 CST (approx, from /tmp/overnight_master.log)",
+  "killed_at": "2026-05-13 16:53 CST",
+  "status": "killed_for_diagnosis",
+  "pid_original": 1664745,
+  "architecture": "GATv2 (local mod: GATConv -> GATv2Conv in actor3.py)",
+  "step1_actor": "validation_data/step1/actors/a_5_5_0.0015.pth (GATv2-trained, 348841 bytes)",
+  "command": "python -u step2.py --vm_types 5 --each_vm_type_num 5 --arr_rate 5.4 --lr_a 0.0003 --lr_c 0.001 --warmup_critic 200",
+  "non_default_flags": {
+    "vm_types": 5,
+    "each_vm_type_num": 5,
+    "arr_rate": 5.4,
+    "lr_a": 0.0003,
+    "lr_c": 0.001,
+    "warmup_critic": 200,
+    "grad_control": "DEFAULT=1 (BUGGY)"
+  },
+  "env_seed": 0,
+  "algo_seed": 4,
+  "git_hash": "8ea504dc2348550e54cb24208312bc4682116a09",
+  "git_dirty_files": "M policy/actor3.py\n M validation_data/step1/actors/a_5_5_0.0015.pth\n?? backups_overnight/\n?? config/__pycache__/\n?? env/workflow_scheduling_v3/__pycache__/\n?? env/workflow_scheduling_v3/lib/__pycache__/cloud_env_maxPktNum.cpython-310.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/cloud_env_maxPktNum.cpython-38.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/dataset.cpython-310.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/dataset.cpython-38.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/poissonSampling.cpython-310.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/poissonSampling.cpython-38.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/processDAG.cpython-310.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/processDAG.cpython-38.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/simqueue.cpython-310.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/simqueue.cpython-38.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/simsetting.cpython-310.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/simsetting.cpython-38.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/stats.cpython-310.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/stats.cpython-38.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/vm.cpython-310.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/vm.cpython-38.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/workflow.cpython-310.pyc\n?? env/workflow_scheduling_v3/lib/__pycache__/workflow.cpython-38.pyc\n?? logs/\n?? policy/__pycache__/\n?? policy/actor3.py.gat_backup\n?? utils/__pycache__/\n?? validation_data/HEFT/HEFT_memory_500_5_5_0.0015.pkl",
+  "findings": "v_mre 110, v_loss mean 2.5-3, grad_changes=0; critic never updated due to grad_control=1 only stepping optimizer_actor."
+}

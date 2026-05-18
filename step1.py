@@ -70,7 +70,14 @@ def main():
 
     configs.train_dataset = np.random.randint(0,wf_types,(configs.max_updates+1, configs.num_envs, configs.wf_num ))
 
-    with open('./validation_data/HEFT/HEFT_memory_500_{}_{}_{}.pkl'.format(configs.vm_types, configs.each_vm_type_num ,configs.arr_rate ), 'rb') as file:
+    # NEW: select teacher memory file
+    if configs.teacher == 'gphh':
+        _mem_path = './validation_data/GPHH/GPHH_memory_500_{}_{}_{}.pkl'.format(configs.vm_types, configs.each_vm_type_num, configs.arr_rate)
+        print(f'[teacher] Using GPHH memory: {_mem_path}', flush=True)
+    else:
+        _mem_path = './validation_data/HEFT/HEFT_memory_500_{}_{}_{}.pkl'.format(configs.vm_types, configs.each_vm_type_num, configs.arr_rate)
+        print(f'[teacher] Using HEFT memory: {_mem_path}', flush=True)
+    with open(_mem_path, 'rb') as file:
         bufferdata = pickle.load(file)[:3]      # state_mb, action_mb, reward_mb, done_mb, graph_nodes    
 
     # non-parallel

@@ -1,0 +1,7 @@
+[Sat May 16 05:45:05 PM CST 2026] === Pointer pipeline started ===
+[Sat May 16 05:45:05 PM CST 2026] Restored GATv2 baseline step1 actor
+[Sat May 16 05:45:05 PM CST 2026] === Step1 with --actor_pointer 1 ===
+[Sat May 16 07:22:48 PM CST 2026] Step1 exit code: 0
+[Sat May 16 07:22:48 PM CST 2026] Step1 last validation: Vlidation at update-10: mean_flowtime_deterministic: 574.819+/-71.975	 record: 468.165	 time_elapsed: 1.628
+[Sat May 16 07:22:48 PM CST 2026] === Step2 with watchdog ===
+[Sun May 17 12:18:50 AM CST 2026] === Pipeline DONE ===

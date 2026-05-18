@@ -1,0 +1,6 @@
+[Mon May 18 08:20:20 PM CST 2026] === GATv2+HEFT baseline: 6_4_9 (arr_per_sec=0.0025) ===
+[Mon May 18 08:20:20 PM CST 2026] symlink: HEFT_memory_500_6_4_0.0025.pkl -> HEFT_memory_500_6_4_9.pkl
+[Mon May 18 08:20:20 PM CST 2026] backed up: /home/xue/GOODRL/validation_data/step1/actors/a_6_4_0.0025.pth.bak_paper_GAT
+[Mon May 18 08:20:20 PM CST 2026] Phase 1: step1 HEFT imitation...
+[Mon May 18 09:51:42 PM CST 2026] step1 done. Vlidation at update-10: mean_flowtime_deterministic: 316.051+/-50.246	 record: 310.823	 time_elapsed: 1.522
+[Mon May 18 09:51:42 PM CST 2026] Phase 2: step2 direct PPO...

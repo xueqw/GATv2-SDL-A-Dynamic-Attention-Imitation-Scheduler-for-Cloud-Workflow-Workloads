@@ -1,0 +1,15 @@
+{
+  "run_id": "20260517_gphh_teacher_pipeline",
+  "description": "Full pipeline using GPHH-trained tree as imitation teacher (instead of HEFT).",
+  "teacher": "gphh",
+  "architecture": "GATv2 + MLP scoring (baseline actor)",
+  "gp_tree_source": "/home/xue/GOODRL/logs/bestTree_5_5_0.0015.pkl",
+  "gphh_memory": "/home/xue/GOODRL/validation_data/GPHH/GPHH_memory_500_5_5_0.0015.pkl",
+  "step1_record": "Vlidation at update-10: mean_flowtime_deterministic: 418.868+/-68.822	 record: 412.563	 time_elapsed: 5.890",
+  "non_default_flags": {
+    "teacher": "gphh", "lr_a": 0.0001, "lr_c": 0.001,
+    "warmup_critic": 500, "max_updates": 1000,
+    "grad_control": 0, "algo_seed": 3, "entloss_coef": 0.01
+  },
+  "started_at": "2026-05-17T20:16:30+08:00"
+}
