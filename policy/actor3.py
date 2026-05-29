@@ -9,7 +9,7 @@ import torch.nn.functional as F
 from torch.distributions.categorical import Categorical
 import torch.nn as nn
 from torch.nn import Sequential, Linear, ReLU, Tanh, TransformerEncoderLayer, TransformerEncoder
-from torch_geometric.nn import GINConv, GATConv, global_mean_pool
+from torch_geometric.nn import GINConv, GATConv, GATv2Conv, global_mean_pool
 # from torch_geometric.utils import scatter, add_self_loops
 from torch.distributions.categorical import Categorical
 from config.Params import configs
@@ -319,8 +319,9 @@ class MLP(nn.Module):
 class GATlayer(nn.Module):
     def __init__(self, in_chnl, out_chnl, dropout, concat, heads=2):   
         super().__init__()     
-        self.dropout = dropout               
-        self.conv = GATConv(in_chnl, out_chnl, heads=heads, dropout=dropout, concat=concat) 
+        self.dropout = dropout
+        ConvCls = GATv2Conv if getattr(configs, 'gnn_version', 'gat') == 'gatv2' else GATConv
+        self.conv = ConvCls(in_chnl, out_chnl, heads=heads, dropout=dropout, concat=concat)
 
     def forward(self, h_node, edge_index):     
         h_node = F.elu(self.conv(F.dropout(h_node, p=self.dropout, training=self.training).float(), edge_index))
@@ -468,9 +469,10 @@ class Critic(nn.Module):
         seq_lengths = torch.bincount(batch_index)
         max_seq_length = seq_lengths.max().item()
         embed_dim = A.size(1)
-        output_A = torch.zeros(batch_size, max_seq_length, embed_dim)
-        output_mask_A = torch.zeros(batch_size, max_seq_length, dtype=torch.bool)
-        original_idx = torch.zeros((batch_size*max_seq_length))
+        _dev = A.device
+        output_A = torch.zeros(batch_size, max_seq_length, embed_dim, device=_dev)
+        output_mask_A = torch.zeros(batch_size, max_seq_length, dtype=torch.bool, device=_dev)
+        original_idx = torch.zeros((batch_size*max_seq_length), device=_dev)
         cum_sum = 0
         for i in range(batch_size):
             idx = (batch_index == i).nonzero().squeeze()
@@ -633,7 +635,7 @@ class Actor(nn.Module):
         if deterministic is True:
             arr = pi.squeeze(-1)
             max_values, _ = torch.max(arr, dim=-1)
-            actions_id = torch.zeros(arr.size(0), dtype=torch.int64)
+            actions_id = torch.zeros(arr.size(0), dtype=torch.int64, device=arr.device)
             for i in range(arr.size(0)):
                 max_positions = torch.nonzero(arr[i] > max_values[i] -1e-5, as_tuple=False).squeeze(1)
                 random_choice = torch.randint(len(max_positions), (1,)).item()
@@ -745,13 +747,13 @@ class REINFORCE:
                             atten_layers=configs.actor_atten_layers,
                             ).to(device)     
 
-        self.optimizer_actor = torch.optim.Adam(self.actor.parameters(), lr=configs.lr_a)
+        self.optimizer_actor = torch.optim.Adam(self.actor.parameters(), lr=configs.lr_a, weight_decay=configs.weight_decay)
 
     def train_HEFT(self, bufferdata):
         # state_mb, action_mb, reward_mb
         cross_losses = []
         batch_states = BatchGraph(configs.normalize)
-        criterion = nn.CrossEntropyLoss()
+        criterion = nn.CrossEntropyLoss(label_smoothing=configs.label_smoothing)
         memory_lens = len(bufferdata[0])
         for _ in range(configs.n_epochs):#int(configs.max_updates/2)):
             indices = np.random.permutation(np.arange(configs.warmup_steps, memory_lens-configs.warmup_steps)) 
@@ -875,8 +877,8 @@ class PPO:
                             dropout,
                             ).to(device)          
 
-        self.optimizer_actor = torch.optim.Adam(self.actor.parameters(), lr=configs.lr_a)
-        self.optimizer_critic = torch.optim.Adam(self.critic.parameters(), lr=configs.lr_c)
+        self.optimizer_actor = torch.optim.Adam(self.actor.parameters(), lr=configs.lr_a, weight_decay=configs.weight_decay)
+        self.optimizer_critic = torch.optim.Adam(self.critic.parameters(), lr=configs.lr_c, weight_decay=configs.weight_decay)
         # NEW: ensure accumulators initialized (referenced in train() / train_actor())
         self.entropy_count = 0
         self.grad_count = 0
@@ -903,7 +905,7 @@ class PPO:
         # state_mb, action_mb, reward_mb
         cross_losses = []
         batch_states = BatchGraph(configs.normalize)
-        criterion = nn.CrossEntropyLoss()
+        criterion = nn.CrossEntropyLoss(label_smoothing=configs.label_smoothing)
         memory_lens = len(bufferdata[0])
         for _ in range(configs.n_epochs): 
             indices = np.random.permutation(np.arange(configs.warmup_steps, memory_lens-configs.warmup_steps)) 

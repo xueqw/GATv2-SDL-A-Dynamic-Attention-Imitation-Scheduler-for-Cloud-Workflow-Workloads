@@ -782,6 +782,46 @@ class cloud_simulator(object):
         min_indices = np.where(priorities == np.min(priorities))[0]
 
         return np.random.choice(min_indices)        
+
+
+    def PEFT_S(self):
+        """Student-visible PEFT variant: uses get_allsucc2end (= Wd2End in features)
+        instead of get_path2end. Fully expressible from gp_feature_construct().
+        NOTE: behavior differs from PEFT (sum-downstream vs min-path-to-leaf).
+        """
+        proxyPath = float(self.df.loc[
+            (self.df['Workflow ID'] == self.nextWrf.appArivalIndex) &
+            (self.df['Task Index'] == self.nextTask), 'Wd2End'].iloc[0])
+        priorities = []
+        for vm in self.vm_queues:
+            priorities.append(
+                vm.vmLatestTime()
+                + vm.get_taskExecuteTime(self.nextTask, self.nextWrf)
+                + proxyPath / vm.cpu)
+        min_indices = np.where(priorities == np.min(priorities))[0]
+        return np.random.choice(min_indices)
+
+    def IPPTS(self):
+        """Improved Predict Priority Task Scheduling (Djigal et al. 2020 variant).
+
+        Like PEFT but uses 2-step lookahead: explicitly evaluates the cost of
+        the next-best successor on the next-best VM, then adds remaining path.
+        """
+        next_tasks = self.nextWrf.get_allnextTask(self.nextTask)
+        priorities = []
+        for vm in self.vm_queues:
+            eft = vm.vmLatestTime() + vm.get_taskExecuteTime(self.nextTask, self.nextWrf)
+            if len(next_tasks) > 0:
+                lookahead = min(
+                    min(ovm.get_taskExecuteTime(nt, self.nextWrf) for ovm in self.vm_queues)
+                    + self.nextWrf.get_allsucc2end(nt) / vm.cpu
+                    for nt in next_tasks
+                )
+            else:
+                lookahead = 0
+            priorities.append(eft + lookahead)
+        min_indices = np.where(priorities == np.min(priorities))[0]
+        return np.random.choice(min_indices)
     
 
     def esrl_feature_construct(self):

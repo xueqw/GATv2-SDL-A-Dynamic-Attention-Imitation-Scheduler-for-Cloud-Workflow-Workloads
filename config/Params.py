@@ -2,7 +2,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Arguments for ppo_dws')
 # args for device
-parser.add_argument('--device', type=str, default="cpu", help='Processor type')
+parser.add_argument('--device', type=str, default="cuda:0", help="Processor type (cuda:0 or cpu)")
 
 # args for Env
 parser.add_argument('--env_seed', type=int, default=0, help='Seed of the environment')
@@ -63,6 +63,9 @@ parser.add_argument('--batch_size', type=int, default=64, help='')
 parser.add_argument('--eps_clip', type=float, default=0.2, help='clip parameter for PPO')
 parser.add_argument('--vloss_coef', type=float, default=0.5, help='critic loss coefficient')
 parser.add_argument('--ploss_coef', type=float, default=1, help='policy loss coefficient')
+parser.add_argument('--label_smoothing', type=float, default=0.0, help='Label smoothing for CE loss')
+parser.add_argument('--weight_decay', type=float, default=0.0, help='Adam weight decay (L2 reg)')
+parser.add_argument('--grad_clip', type=float, default=0.0, help='Gradient clipping max norm; 0 = disabled')
 parser.add_argument('--entloss_coef', type=float, default=0, help='entropy loss coefficient')
 parser.add_argument('--beta_kl', type=float, default=0, help='KL anchor weight to step1 reference actor (0=off)')
 parser.add_argument('--beta_kl_after', type=float, default=-1, help='KL anchor weight after critic warmup (<0 = same as beta_kl)')
@@ -103,6 +106,9 @@ parser.add_argument('--normalize_rewards', type=int, default=1000)
 
 parser.add_argument('--actor_atten_layers', type=int, default=0, help='Number of self-attention layers in actor over candidates (0 = paper baseline)')
 parser.add_argument('--actor_pointer', type=int, default=0, help='Use Pointer attention scoring head in actor (0=MLP baseline, 1=pointer)')
+parser.add_argument('--gnn_version', type=str, default='gat', choices=['gat', 'gatv2'], help='Graph attention variant: gat (Velickovic 2018, GATConv, static attention) | gatv2 (Brody 2022, GATv2Conv, dynamic attention)')
+parser.add_argument('--test_num', type=int, default=100, help='Number of held-out test instances (disjoint from the validation set, used only for final unbiased reporting)')
+parser.add_argument('--drift_analysis', type=int, default=0, help='If 1, save per-epoch actors and report consecutive-epoch policy drift (Analysis B: argmax disagreement / KL / TV)')
 parser.add_argument('--teacher', type=str, default='heft', help='Imitation teacher: heft | gphh')
 parser.add_argument('--gp_tree', type=str, default=None, help='Path to GP tree pickle for GPHH memory generation')
 parser.add_argument('--num_instances', type=int, default=500, help='Number of training instances for memory generation')
