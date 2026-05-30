@@ -117,4 +117,8 @@ parser.add_argument('--resume', type=str, default=None, help='Path to checkpoint
 parser.add_argument('--checkpoint_dir', type=str, default='./checkpoints_default', help='Where to save checkpoints')
 parser.add_argument('--checkpoint_interval', type=int, default=50, help='Save checkpoint every N updates')
 
+parser.add_argument('--soft_imitation', type=int, default=0, help='1=use embedding-similarity soft targets in BC (step1) instead of one-hot CE')
+parser.add_argument('--soft_imitation_tau', type=float, default=0.5, help='temperature for soft-target similarity softmax')
+parser.add_argument('--soft_imitation_lambda', type=float, default=0.5, help='mix: lambda*one-hot + (1-lambda)*embedding-soft target')
+parser.add_argument('--soft_imitation_metric', type=str, default='cos', help='cos or dot similarity for soft imitation targets')
 configs = parser.parse_args() 

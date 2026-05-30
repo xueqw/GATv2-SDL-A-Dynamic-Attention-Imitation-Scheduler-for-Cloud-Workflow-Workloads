@@ -9,6 +9,27 @@ from policy.actor3 import PPO, BatchGraph
 from env.workflow_scheduling_v3.simulator_wf import WFEnv
 from env.workflow_scheduling_v3.lib.poissonSampling import sample_poisson_shape
 # from joblib import Parallel, delayed    # parallel version
+import torch.nn.functional as F
+
+
+def soft_imitation_loss(logits, cand_emb, actions):
+    # logits: (B,N) raw scores; cand_emb: (B,N,d) candidate embeddings; actions: (B,) teacher index.
+    # Structure-aware label smoothing: candidates whose embedding is close to the teacher-chosen
+    # candidate share soft target mass, so near-interchangeable VMs are not penalized as gross errors.
+    B, N, d = cand_emb.shape
+    idx = actions.view(B, 1, 1).expand(B, 1, d)
+    e_star = torch.gather(cand_emb, 1, idx).squeeze(1)                 # (B,d)
+    if configs.soft_imitation_metric == 'cos':
+        emb_n = F.normalize(cand_emb, dim=-1)
+        es_n = F.normalize(e_star, dim=-1).unsqueeze(1)               # (B,1,d)
+        sim = (emb_n * es_n).sum(-1)                                  # (B,N)
+    else:
+        sim = torch.bmm(cand_emb, e_star.unsqueeze(-1)).squeeze(-1) / (d ** 0.5)
+    soft = F.softmax(sim / configs.soft_imitation_tau, dim=-1)        # (B,N)
+    onehot = F.one_hot(actions, num_classes=N).float()
+    target = configs.soft_imitation_lambda * onehot + (1.0 - configs.soft_imitation_lambda) * soft
+    logp = F.log_softmax(logits, dim=-1)                             # (B,N)
+    return -(target * logp).sum(dim=-1).mean()
 
 device = torch.device(configs.device)
 # file_writing_a = './logs/actor_log_' + str(configs.epochs_c) + '_' + str(configs.lr_c) + '_' + str(configs.window_steps) + '.npy'
@@ -162,7 +183,19 @@ def main():
             e_loss = torch.mean(e_loss) # - ent_loss.clone()
             ent_loss.append(e_loss.item())
 
-            p_loss = criterion(dists, temp_actions.long())
+            if configs.soft_imitation:
+                _logits, _cand_emb = algos.actor.eval_imitation(state_wf = batch_states.wf_features,
+                                    state_vm = batch_states.vm_features,
+                                    edge_index_wf = batch_states.wf_edges,
+                                    edge_index_vm = batch_states.vm_edges,
+                                    mask_wf = batch_states.wf_masks,
+                                    mask_vm = batch_states.vm_masks,
+                                    batch_wf = batch_states.wf_batchs,
+                                    batch_vm = batch_states.vm_batchs,
+                                    candidate_task_index = batch_states.candidate_taskID)
+                p_loss = soft_imitation_loss(_logits, _cand_emb, temp_actions.long())
+            else:
+                p_loss = criterion(dists, temp_actions.long())
 
             if configs.entloss_coef>0:
                 loss = p_loss - configs.entloss_coef*e_loss

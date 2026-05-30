@@ -724,6 +724,28 @@ class Actor(nn.Module):
 
         return pi.squeeze(), entropy
 
+    def eval_imitation(self,
+                state_wf, state_vm, edge_index_wf, edge_index_vm,
+                mask_wf, mask_vm, batch_wf, batch_vm,
+                candidate_task_index):
+        # Returns raw candidate logits (B,N) and candidate embeddings (B,N,d)
+        # for embedding-similarity soft imitation (avoids the double-softmax of eval_dists).
+        edge_index_wf = torch.cat((edge_index_wf, edge_index_wf.flip(0)), dim=-1)
+        wf_task_embed = self.embedding_wf(state_wf, edge_index_wf)
+        hidden_dim = wf_task_embed.shape[-1]
+        candidate_tasks = wf_task_embed[candidate_task_index]
+        candidate_tasks = candidate_tasks.reshape(-1, self.vmNum, hidden_dim)
+        graph_embed = candidate_tasks
+        if self.atten_layers > 0:
+            graph_embed = self.candidate_attention(graph_embed)
+        if self.use_pointer:
+            context = graph_embed.mean(dim=1)
+            candidate_scores = self.pointer_head(context, graph_embed)        # (B,N)
+        else:
+            candidate_scores = self.actor(graph_embed).squeeze(-1)            # (B,N)
+        return candidate_scores, graph_embed
+
+
 class REINFORCE:
     def __init__(self,
                  input_dim_wf,
